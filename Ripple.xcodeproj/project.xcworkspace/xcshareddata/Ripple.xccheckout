@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E27675CE-2F45-4D87-A779-6E560C3BABE1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Ripple</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>66129942-FF27-4FA9-A657-5239481780F0</key>
+		<string>https://bitbucket.org/_edrex/ripple.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Ripple.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>66129942-FF27-4FA9-A657-5239481780F0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/_edrex/ripple.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>66129942-FF27-4FA9-A657-5239481780F0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>66129942-FF27-4FA9-A657-5239481780F0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Ripple</string>
+		</dict>
+	</array>
+</dict>
+</plist>
