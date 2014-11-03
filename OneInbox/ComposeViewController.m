@@ -19,6 +19,7 @@
     
     NSTimeInterval _animationDuration;
     UIViewAnimationCurve _animationCurve;
+    CGFloat _keyboardTop;
     CGFloat _viewPositionWhenKeyboardRevealed;
 }
 
@@ -280,6 +281,11 @@
     
     NSNumber *curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey];
     _animationCurve = curveValue.intValue;
+    
+    CGRect keyboardRect = [[aNotification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    _keyboardTop = keyboardRect.size.height;
+    
+    [self moveShareView];
 }
 
 #pragma mark - Dismissing text view
@@ -371,33 +377,16 @@
     
     [MFRAnalytics trackEvent:@"Started editing message in compose screen"];
     
-    void (^animations)() = ^() {
-        _shareView.frame = CGRectMake(_shareView.frame.origin.x, _shareView.frame.origin.y - 215, _shareView.frame.size.width, _shareView.frame.size.height);
-        
-        if (_viewPositionWhenKeyboardRevealed != 0) {
-            self.movingView.frame = CGRectMake(self.movingView.frame.origin.x, _viewPositionWhenKeyboardRevealed, self.movingView.frame.size.width, self.movingView.frame.size.height + _viewPositionWhenKeyboardRevealed);
-        }
-    };
-    
-    [UIView animateWithDuration:_animationDuration
-                          delay:0.0
-                        options:(_animationCurve << 16)
-                     animations:animations
-                     completion:nil];
+    [self moveShareView];
+    return YES;
     
     return YES;
 }
-- (BOOL)growingTextViewShouldEndEditing:(HPGrowingTextView *)growingTextView {
-    
+
+
+- (void) moveShareView {
     void (^animations)() = ^() {
-        _shareView.frame = CGRectMake(_shareView.frame.origin.x, _shareView.frame.origin.y + 215, _shareView.frame.size.width, _shareView.frame.size.height);
-        
-        if (self.movingView.frame.origin.y != 0) {
-            _viewPositionWhenKeyboardRevealed = self.movingView.frame.origin.y;
-            self.movingView.frame = CGRectMake(self.movingView.frame.origin.x, 0, self.movingView.frame.size.width, self.movingView.frame.size.height - _viewPositionWhenKeyboardRevealed);
-        } else {
-            _viewPositionWhenKeyboardRevealed = 0;
-        }
+        self.shareView.frame = CGRectMake(self.shareView.frame.origin.x, self.shareView.superview.bounds.size.height - self.shareView.frame.size.height - _keyboardTop, self.shareView.frame.size.width, self.shareView.frame.size.height);
     };
     
     [UIView animateWithDuration:_animationDuration
@@ -405,7 +394,13 @@
                         options:(_animationCurve << 16)
                      animations:animations
                      completion:nil];
-    
+}
+
+- (BOOL)growingTextViewShouldEndEditing:(HPGrowingTextView *)growingTextView {
+
+    _keyboardTop = 0;
+    [self moveShareView];
+
     return YES;
 }
 
