@@ -1,0 +1,47 @@
+# Finder droppings, in any directory
+.DS_Store
+
+# ignore user specific XCode project stuff.
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+profile
+*.moved-aside
+
+# Ignore the project build areas.
+DerivedData
+build/
+derived/
+derived-sources/
+
+# ignore App Code project
+.idea/
+Pods
+global.json
+setEnv.sh
+derived-sources
+
+# ignore Android build artifacts
+gen/
+bin/
+.gradle/
+local.properties
+android-appcompat/
+
+# IntelliJ Idea & Android Studio
+*.iml
+.idea/
+
+# Eclipse
+.metadata/
+.project
+.settings
+Acknowledgements.plist
