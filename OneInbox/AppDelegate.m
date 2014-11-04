@@ -147,15 +147,15 @@
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0],
-      UITextAttributeTextColor,
+      NSForegroundColorAttributeName,
       [UIFont fontWithName:@"Titillium-Regular" size:18.0],
-      UITextAttributeFont,
+      NSFontAttributeName,
       nil]];
     
     // Set bar button item font
     NSDictionary *textAttributes = @{
-                                     UITextAttributeTextColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0],
-                                     UITextAttributeFont:[UIFont fontWithName:@"Titillium-Regular" size:17.0]
+                                     NSForegroundColorAttributeName:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0],
+                                     NSFontAttributeName:[UIFont fontWithName:@"Titillium-Regular" size:17.0]
                                       };
     [[UIBarButtonItem appearanceWhenContainedIn: [UINavigationController class],nil]
      setTitleTextAttributes:textAttributes
