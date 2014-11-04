@@ -260,8 +260,6 @@
     //---------------------------------
     _messageThread = [MFRLocalMessageThread addReplyToLocalMessageThread:_messageThread withMessage:_replyView.messageView.text];
     
-    NSString* countString = [NSString stringWithFormat:@"%d", ((int)[[_messageThread objectForKey:@"Messages"] count] - 1)];
-    
     //--------------------
     // Show latest message
     //--------------------
@@ -783,8 +781,6 @@
 //--------------------------------------------------
 -(IBAction)retrySend {
     [MFRAnalytics trackEvent:@"Retry button pressed on unsent message"];
-    
-    NSString* messageCountString = [NSString stringWithFormat:@"%d", _retryButtonPressedForMessageNumber];
     
     //----------------------------
     // Update timestamp on message

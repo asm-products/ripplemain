@@ -970,8 +970,6 @@
         //-------------------------------------------------------
         [parentDelegate removeSwipeGesture];
         
-        SettingsViewController* controller = segue.destinationViewController;
-        
         [MFRAnalytics trackEvent:@"Settings screen displayed"];
     }
 }
