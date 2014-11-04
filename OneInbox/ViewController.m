@@ -384,7 +384,7 @@
         [MFRLocalMessageThread messageThreadIsUnread:_messageThread]
         ) {
         // Back button was pressed - update unread status of message in inbox and cloud
-        NSDictionary* readDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"read", [NSNumber numberWithInt:inboxEntry], @"messageArrayEntry", nil];
+        NSDictionary* readDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"read", [NSNumber numberWithInteger:inboxEntry], @"messageArrayEntry", nil];
         [deleteMessageDelegate updateMessageAsRead:readDict];
         
         // Set inbox to reload when we return to it

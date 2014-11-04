@@ -130,7 +130,7 @@
     
     [self performSelectorOnMainThread:@selector(showAddingFriendWheel:) withObject:[NSNumber numberWithBool:YES] waitUntilDone:NO];
     
-    [self performSelectorInBackground:@selector(addSelectedContact:) withObject:[NSNumber numberWithInt:index]];
+    [self performSelectorInBackground:@selector(addSelectedContact:) withObject:[NSNumber numberWithInteger:index]];
 }
 
 -(void)addSelectedContact:(NSNumber*)index {
