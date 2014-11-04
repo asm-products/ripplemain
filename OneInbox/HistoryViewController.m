@@ -100,7 +100,7 @@
     } else {
         _sendingLabel.text = @"Sending failed";
     }
-    [self performSelector:@selector(showSendingLabel:) withObject:NO afterDelay:2];
+    [self performSelector:@selector(showSendingLabel:) withObject:nil afterDelay:2];
 }
 
 -(void)showSendingWheel:(BOOL)show {

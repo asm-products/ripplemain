@@ -54,7 +54,7 @@
 //    _maskView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _maskView = [[UIView alloc] initWithFrame:[self.view bounds]];
     _maskView.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
-    [self showAddingFriendWheel:NO];
+    [self showAddingFriendWheel:nil];
 }
 
 - (void)didReceiveMemoryWarning
