@@ -198,7 +198,7 @@
         if (userLinks.objectId) {
             
             // userLinks has been saved to the cloud
-            [userLinks refreshInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            [userLinks fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
                 if (!error) {
                     
                     NSMutableArray* localMessageThreads = [appDelegate getLocalMessageThreads];
@@ -903,7 +903,7 @@
     PFObject* userLinks = [appDelegate getUserLinks];
     
     // Get latest version of userLinks from the cloud
-    [userLinks refreshInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+    [userLinks fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         
         // Get latest _messages from cloud object
         _messages = [[userLinks objectForKey:@"ReceivedLinks"] mutableCopy];

@@ -383,7 +383,7 @@
 }
 
 -(void)refreshUserFromCloud {
-    [[PFUser currentUser] refreshInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+    [[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         
         _user = [PFUser currentUser];
         

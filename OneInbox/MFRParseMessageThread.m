@@ -23,7 +23,7 @@
     //-----------------------------------------------------------------------------------
     // Check this is the latest version of the message thread and get message thread info
     //-----------------------------------------------------------------------------------
-    [messageThread refresh];
+    [messageThread fetch];
     NSMutableArray* messages = [[messageThread objectForKey:@"Messages"] mutableCopy];
     NSMutableDictionary* unreadMarkers = [messageThread objectForKey:@"UnreadMarkers"];
     
