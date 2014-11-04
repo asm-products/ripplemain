@@ -379,8 +379,6 @@
     
     [self moveShareView];
     return YES;
-    
-    return YES;
 }
 
 

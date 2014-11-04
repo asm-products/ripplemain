@@ -1022,13 +1022,26 @@
 - (void) moveReplyView {
     void (^animations)() = ^() {
         self.replyView.frame = CGRectMake(self.replyView.frame.origin.x, self.replyView.superview.bounds.size.height - self.replyView.frame.size.height - _keyboardTop, self.replyView.frame.size.width, self.replyView.frame.size.height);
+        
+        CGRect scrollFrame = self.scrollView.frame;
+        scrollFrame.size.height = self.replyView.frame.origin.y;
+        BOOL scrollToBottom = NO;
+        if (scrollFrame.size.height < self.scrollView.frame.size.height) {
+            scrollToBottom = YES;
+        }
+        self.scrollView.frame = scrollFrame;
+
+        if (scrollToBottom) {
+            CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
+            self.scrollView.contentOffset = bottomOffset;
+        }
     };
-    
     [UIView animateWithDuration:_animationDuration
                           delay:0.0
                         options:(_animationCurve << 16)
                      animations:animations
-                     completion:nil];
+                     completion:^(BOOL finished) {
+                     }];
 }
 
 - (BOOL)growingTextViewShouldEndEditing:(HPGrowingTextView *)growingTextView {
