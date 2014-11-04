@@ -107,15 +107,13 @@
         recipients = [NSMutableArray arrayWithObject:originator.objectId];
     } else {
         recipients = [[unreadMarkers allKeys] mutableCopy];
-        int currentUserEntry;
         for (int i = 0; i < [recipients count]; i++) {
             NSString* userID = [recipients objectAtIndex:i];
             if ([userID isEqualToString:[PFUser currentUser].objectId]) {
-                currentUserEntry = i;
+                [recipients removeObjectAtIndex:i];
                 break;
             }
         }
-        [recipients removeObjectAtIndex:currentUserEntry];
     }
     
     // Update unread markers
