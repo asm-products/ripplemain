@@ -1202,13 +1202,13 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[TwitterViewController connectToTwitter:]"
                   moduleName = "Ripple"
-                  urlString = "file:///Users/edrex/Documents/Programming/Ripple/OneInbox/TwitterViewController.m"
-                  timestampString = "425550524.070819"
+                  urlString = "file:///Users/edrex/Documents/ripplemain/OneInbox/TwitterViewController.m"
+                  timestampString = "436780829.283368"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
                   endingLineNumber = "90"
-                  offsetFromSymbolStart = "206">
+                  offsetFromSymbolStart = "249">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1216,13 +1216,13 @@
                   continueAfterRunningActions = "No"
                   symbolName = "__42-[TwitterViewController connectToTwitter:]_block_invoke"
                   moduleName = "Ripple"
-                  urlString = "file:///Users/edrex/Documents/Programming/Ripple/OneInbox/TwitterViewController.m"
-                  timestampString = "425550524.07108"
+                  urlString = "file:///Users/edrex/Documents/ripplemain/OneInbox/TwitterViewController.m"
+                  timestampString = "436780829.283549"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
                   endingLineNumber = "90"
-                  offsetFromSymbolStart = "55">
+                  offsetFromSymbolStart = "63">
                </Location>
             </Locations>
          </BreakpointContent>
