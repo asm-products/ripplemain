@@ -351,7 +351,7 @@
 //------------------------------------------
 // Send given recipients a push notification
 //------------------------------------------
-+(void)sendPushNotificationWithMessage:(NSString*)messageString toRecipients:(NSMutableArray*)recipients {
++(void)sendPushNotificationWithMessage:(NSString*)messageString toRecipients:(NSArray*)recipients {
     
     PFQuery* pushQuery = [PFInstallation query];
     [pushQuery whereKey:@"UserID" containedIn:recipients];
