@@ -1047,12 +1047,12 @@
         tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                                                                   initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(exitContactsButtonPressed)];
     
-        [self presentModalViewController:navController animated:YES];
+        [self presentViewController:navController animated:YES completion:nil];
     }
 }
 
 -(void)exitContactsButtonPressed {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
     [parentDelegate addSwipeGesture];
 }
 

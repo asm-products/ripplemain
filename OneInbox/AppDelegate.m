@@ -332,8 +332,7 @@
 
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
-//    _newUser = YES;
-    [self.loginViewController dismissModalViewControllerAnimated:YES]; // Dismiss the PFSignUpViewController
+    [self.loginViewController dismissViewControllerAnimated:YES completion:nil]; // Dismiss the PFSignUpViewController
     
     //---------------------------
     // Send user their first link
