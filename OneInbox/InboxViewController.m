@@ -807,14 +807,12 @@
     NSMutableArray* userIDs = [[unreadMarkers allKeys] mutableCopy];
     
     // Remove current user
-    int currentUserEntry;
     for (int i = 0; i < [userIDs count]; i++) {
         if ([[userIDs objectAtIndex:i] isEqualToString:[PFUser currentUser].objectId]) {
-            currentUserEntry = i;
+            [userIDs removeObjectAtIndex:i];
             break;
         }
     }
-    [userIDs removeObjectAtIndex:currentUserEntry];
     
     // Separate into users whose names we've already stored and users whose names we haven't yet stored
     NSMutableArray* unknownUserIDs = [NSMutableArray array];
@@ -955,7 +953,7 @@
         
         ViewController* controller = segue.destinationViewController;
         
-        int messagesArrayEntry = [self.tableView indexPathForSelectedRow].row;
+        NSInteger messagesArrayEntry = [self.tableView indexPathForSelectedRow].row;
         NSMutableDictionary* messageThread = [[_messages objectAtIndex:messagesArrayEntry] mutableCopy];
         controller.messageThread = messageThread;
         

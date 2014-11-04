@@ -106,7 +106,7 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    int currentIndex = [_navigationControllers indexOfObject:(NonRotatingNavigationController*)viewController];
+    NSInteger currentIndex = [_navigationControllers indexOfObject:(NonRotatingNavigationController*)viewController];
     if (currentIndex == 0)
     {
         return nil;
@@ -122,7 +122,7 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
        viewControllerAfterViewController:(UIViewController *)viewController
 {
-    int currentIndex = [_navigationControllers indexOfObject:(NonRotatingNavigationController*)viewController];
+    NSInteger currentIndex = [_navigationControllers indexOfObject:(NonRotatingNavigationController*)viewController];
     if (currentIndex == 2)
     {
         return nil;

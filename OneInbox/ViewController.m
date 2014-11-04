@@ -42,7 +42,7 @@
     CGFloat _keyboardOverlap;
     BOOL _originalMessagesDisplayed;
     float _timerCount;
-    int _retryButtonPressedForMessageNumber;
+    NSInteger _retryButtonPressedForMessageNumber;
     BOOL _mustRedisplayAllMessages;
 }
 
@@ -566,7 +566,7 @@
     NSString* messageThreadId = [_messageThread objectForKey:@"objectId"];
     
     NSArray* messages = [_messageThread objectForKey:@"Messages"];
-    int oldMessagesCount = [_messages count];
+    NSInteger oldMessagesCount = [_messages count];
     for (int i = 0; i < [messages count]; i++) {
         
         NSDictionary* message = [messages objectAtIndex:i];
@@ -882,7 +882,7 @@
     
     if ([[segue identifier] isEqualToString:@"ForwardLink"]){
         
-        NSDictionary *dimensions = @{ @"Number message in inbox view": [NSString stringWithFormat:@"%d", inboxEntry] };
+        NSDictionary *dimensions = @{ @"Number message in inbox view": [NSString stringWithFormat:@"%ld", (long)inboxEntry] };
         [MFRAnalytics trackEvent:@"Forward button pressed" dimensions:dimensions];
         
         //--------------------------------

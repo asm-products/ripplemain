@@ -126,7 +126,7 @@
 }
 
 #pragma mark - Add Contact Cell delegate
--(void)addContactAtIndex:(int)index {
+-(void)addContactAtIndex:(NSInteger)index {
     
     [self performSelectorOnMainThread:@selector(showAddingFriendWheel:) withObject:[NSNumber numberWithBool:YES] waitUntilDone:NO];
     

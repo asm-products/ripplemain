@@ -110,7 +110,7 @@
     [colors addObject:(id)[secondColor CGColor]];
     NSMutableArray  *normalGradientColors = colors;
     
-    int locCount = [normalGradientLocations count];
+    NSInteger locCount = [normalGradientLocations count];
     CGFloat locations[locCount];
     for (int i = 0; i < [normalGradientLocations count]; i++)
     {

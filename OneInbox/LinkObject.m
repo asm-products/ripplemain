@@ -14,7 +14,7 @@
 
 @implementation LinkObject {
     
-    int _selectedImageNumber;
+    NSUInteger _selectedImageNumber;
 }
 
 @synthesize imageURL = _imageURL;
@@ -242,9 +242,10 @@
 }
 
 -(void)moveToPreviousPossibleImage {
-    _selectedImageNumber--;
-    if (_selectedImageNumber < 0) {
+    if (_selectedImageNumber == 0) {
         _selectedImageNumber = [_possibleImageURLs count] - 1;
+    } else {
+        _selectedImageNumber--;
     }
 }
 
