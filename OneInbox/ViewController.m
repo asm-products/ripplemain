@@ -35,6 +35,7 @@
     BOOL _unreadStatusChanged;
     NSTimeInterval _animationDuration;
     UIViewAnimationCurve _animationCurve;
+    CGFloat _keyboardTop;
     CGFloat _combinedMessageViewHeight;
     CGFloat _maxScrollViewHeight;
     BOOL _replyButtonEnabled;
@@ -411,6 +412,11 @@
     
     NSNumber *curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey];
     _animationCurve = curveValue.intValue;
+    
+    CGRect keyboardRect = [[aNotification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    _keyboardTop = keyboardRect.size.height;
+    
+    [self moveReplyView];
 }
 
 -(IBAction)clickOutsideTextField:(id)sender {
@@ -1009,37 +1015,13 @@
     
     [MFRAnalytics trackEvent:@"Started editing message in reply screen"];
     
-    void (^animations)() = ^() {
-
-        _keyboardOverlap = 215 - (self.movingView.frame.size.height - self.replyView.frame.size.height - self.scrollView.frame.size.height + self.scrollView.contentInset.bottom);
-        if (_keyboardOverlap < 0) {
-            _keyboardOverlap = 0;
-        }
-        
-        self.replyView.frame = CGRectMake(self.replyView.frame.origin.x, self.replyView.frame.origin.y - 215, self.replyView.frame.size.width, self.replyView.frame.size.height);
-        if (_keyboardOverlap > 0) {
-            [self growScrollViewFrameHeightByHeight:-_keyboardOverlap];
-        }
-    };
-    
-    [UIView animateWithDuration:_animationDuration
-                          delay:0.0
-                        options:(_animationCurve << 16)
-                     animations:animations
-                     completion:nil];
-    
+    [self moveReplyView];
     return YES;
 }
-- (BOOL)growingTextViewShouldEndEditing:(HPGrowingTextView *)growingTextView {
-    
+
+- (void) moveReplyView {
     void (^animations)() = ^() {
-        
-        // WAS 215
-        self.replyView.frame = CGRectMake(self.replyView.frame.origin.x, self.replyView.frame.origin.y + 215, self.replyView.frame.size.width, self.replyView.frame.size.height);
-        
-        if (_keyboardOverlap > 0) {
-            [self growScrollViewFrameHeightByHeight:_keyboardOverlap];
-        }
+        self.replyView.frame = CGRectMake(self.replyView.frame.origin.x, self.replyView.superview.bounds.size.height - self.replyView.frame.size.height - _keyboardTop, self.replyView.frame.size.width, self.replyView.frame.size.height);
     };
     
     [UIView animateWithDuration:_animationDuration
@@ -1047,6 +1029,13 @@
                         options:(_animationCurve << 16)
                      animations:animations
                      completion:nil];
+}
+
+- (BOOL)growingTextViewShouldEndEditing:(HPGrowingTextView *)growingTextView {
+    
+    _keyboardTop = 0;
+
+    [self moveReplyView];
     
     return YES;
 }
