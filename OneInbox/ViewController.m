@@ -30,7 +30,7 @@
 #define SENDING_FAILED_BUTTON_HEIGHT 40.0
 #define SENDING_FAILED_LABEL_Y_POSITION 250
 
-@interface ViewController ()<ReplyDelegate> {
+@interface ViewController ()<ReplyDelegate, HPGrowingTextViewDelegate> {
     
     BOOL _unreadStatusChanged;
     NSTimeInterval _animationDuration;

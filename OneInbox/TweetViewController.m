@@ -11,7 +11,7 @@
 #import <Parse/Parse.h>
 #import "MFRAnalytics.h"
 
-@interface TweetViewController () {
+@interface TweetViewController () <HPGrowingTextViewDelegate> {
     NSTimeInterval _animationDuration;
     UIViewAnimationCurve _animationCurve;
     CGFloat _viewPositionWhenKeyboardRevealed;
