@@ -331,7 +331,6 @@
     BOOL success = [[dict objectForKey:@"Success"] boolValue];
     NSString* updatedMessageID = [dict objectForKey:@"UpdatedMessageID"];
     
-    NSString* countString = [NSString stringWithFormat:@"%d", ((int)[[_messageThread objectForKey:@"Messages"] count] - 1)];
     if (success) {
         
         [self changeSendingStatus:[NSNumber numberWithInteger:2]];
