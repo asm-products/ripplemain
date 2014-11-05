@@ -23,7 +23,7 @@
     //-----------------------------------------------------------------------------------
     // Check this is the latest version of the message thread and get message thread info
     //-----------------------------------------------------------------------------------
-    [messageThread refresh];
+    [messageThread fetch];
     NSMutableArray* messages = [[messageThread objectForKey:@"Messages"] mutableCopy];
     NSMutableDictionary* unreadMarkers = [messageThread objectForKey:@"UnreadMarkers"];
     
@@ -107,15 +107,13 @@
         recipients = [NSMutableArray arrayWithObject:originator.objectId];
     } else {
         recipients = [[unreadMarkers allKeys] mutableCopy];
-        int currentUserEntry;
         for (int i = 0; i < [recipients count]; i++) {
             NSString* userID = [recipients objectAtIndex:i];
             if ([userID isEqualToString:[PFUser currentUser].objectId]) {
-                currentUserEntry = i;
+                [recipients removeObjectAtIndex:i];
                 break;
             }
         }
-        [recipients removeObjectAtIndex:currentUserEntry];
     }
     
     // Update unread markers
@@ -353,7 +351,7 @@
 //------------------------------------------
 // Send given recipients a push notification
 //------------------------------------------
-+(void)sendPushNotificationWithMessage:(NSString*)messageString toRecipients:(NSMutableArray*)recipients {
++(void)sendPushNotificationWithMessage:(NSString*)messageString toRecipients:(NSArray*)recipients {
     
     PFQuery* pushQuery = [PFInstallation query];
     [pushQuery whereKey:@"UserID" containedIn:recipients];

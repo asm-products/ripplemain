@@ -30,7 +30,7 @@
 #define SENDING_FAILED_BUTTON_HEIGHT 40.0
 #define SENDING_FAILED_LABEL_Y_POSITION 250
 
-@interface ViewController ()<ReplyDelegate> {
+@interface ViewController ()<ReplyDelegate, HPGrowingTextViewDelegate> {
     
     BOOL _unreadStatusChanged;
     NSTimeInterval _animationDuration;
@@ -42,7 +42,7 @@
     CGFloat _keyboardOverlap;
     BOOL _originalMessagesDisplayed;
     float _timerCount;
-    int _retryButtonPressedForMessageNumber;
+    NSInteger _retryButtonPressedForMessageNumber;
     BOOL _mustRedisplayAllMessages;
 }
 
@@ -260,8 +260,6 @@
     //---------------------------------
     _messageThread = [MFRLocalMessageThread addReplyToLocalMessageThread:_messageThread withMessage:_replyView.messageView.text];
     
-    NSString* countString = [NSString stringWithFormat:@"%d", ((int)[[_messageThread objectForKey:@"Messages"] count] - 1)];
-    
     //--------------------
     // Show latest message
     //--------------------
@@ -333,7 +331,6 @@
     BOOL success = [[dict objectForKey:@"Success"] boolValue];
     NSString* updatedMessageID = [dict objectForKey:@"UpdatedMessageID"];
     
-    NSString* countString = [NSString stringWithFormat:@"%d", ((int)[[_messageThread objectForKey:@"Messages"] count] - 1)];
     if (success) {
         
         [self changeSendingStatus:[NSNumber numberWithInteger:2]];
@@ -386,7 +383,7 @@
         [MFRLocalMessageThread messageThreadIsUnread:_messageThread]
         ) {
         // Back button was pressed - update unread status of message in inbox and cloud
-        NSDictionary* readDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"read", [NSNumber numberWithInt:inboxEntry], @"messageArrayEntry", nil];
+        NSDictionary* readDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"read", [NSNumber numberWithInteger:inboxEntry], @"messageArrayEntry", nil];
         [deleteMessageDelegate updateMessageAsRead:readDict];
         
         // Set inbox to reload when we return to it
@@ -566,7 +563,7 @@
     NSString* messageThreadId = [_messageThread objectForKey:@"objectId"];
     
     NSArray* messages = [_messageThread objectForKey:@"Messages"];
-    int oldMessagesCount = [_messages count];
+    NSInteger oldMessagesCount = [_messages count];
     for (int i = 0; i < [messages count]; i++) {
         
         NSDictionary* message = [messages objectAtIndex:i];
@@ -784,8 +781,6 @@
 -(IBAction)retrySend {
     [MFRAnalytics trackEvent:@"Retry button pressed on unsent message"];
     
-    NSString* messageCountString = [NSString stringWithFormat:@"%d", _retryButtonPressedForMessageNumber];
-    
     //----------------------------
     // Update timestamp on message
     //----------------------------
@@ -882,7 +877,7 @@
     
     if ([[segue identifier] isEqualToString:@"ForwardLink"]){
         
-        NSDictionary *dimensions = @{ @"Number message in inbox view": [NSString stringWithFormat:@"%d", inboxEntry] };
+        NSDictionary *dimensions = @{ @"Number message in inbox view": [NSString stringWithFormat:@"%ld", (long)inboxEntry] };
         [MFRAnalytics trackEvent:@"Forward button pressed" dimensions:dimensions];
         
         //--------------------------------

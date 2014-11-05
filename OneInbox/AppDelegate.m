@@ -147,15 +147,15 @@
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0],
-      UITextAttributeTextColor,
+      NSForegroundColorAttributeName,
       [UIFont fontWithName:@"Titillium-Regular" size:18.0],
-      UITextAttributeFont,
+      NSFontAttributeName,
       nil]];
     
     // Set bar button item font
     NSDictionary *textAttributes = @{
-                                     UITextAttributeTextColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0],
-                                     UITextAttributeFont:[UIFont fontWithName:@"Titillium-Regular" size:17.0]
+                                     NSForegroundColorAttributeName:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0],
+                                     NSFontAttributeName:[UIFont fontWithName:@"Titillium-Regular" size:17.0]
                                       };
     [[UIBarButtonItem appearanceWhenContainedIn: [UINavigationController class],nil]
      setTitleTextAttributes:textAttributes
@@ -332,8 +332,7 @@
 
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
-//    _newUser = YES;
-    [self.loginViewController dismissModalViewControllerAnimated:YES]; // Dismiss the PFSignUpViewController
+    [self.loginViewController dismissViewControllerAnimated:YES completion:nil]; // Dismiss the PFSignUpViewController
     
     //---------------------------
     // Send user their first link
@@ -383,7 +382,7 @@
 }
 
 -(void)refreshUserFromCloud {
-    [[PFUser currentUser] refreshInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+    [[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         
         _user = [PFUser currentUser];
         

@@ -48,7 +48,7 @@
     _numberOfContactsSelected = 0;
     
     // Get contacts from address book - not yet being used
-    ABAddressBookRef addressBook = ABAddressBookCreate();
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
     
     __block BOOL accessGranted = NO;
     

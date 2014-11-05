@@ -44,7 +44,7 @@
     
     _maskView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _maskView.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
-    [self showAddingFriendWheel:NO];
+    [self showAddingFriendWheel:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -126,11 +126,11 @@
 }
 
 #pragma mark - Add Contact Cell delegate
--(void)addContactAtIndex:(int)index {
+-(void)addContactAtIndex:(NSInteger)index {
     
     [self performSelectorOnMainThread:@selector(showAddingFriendWheel:) withObject:[NSNumber numberWithBool:YES] waitUntilDone:NO];
     
-    [self performSelectorInBackground:@selector(addSelectedContact:) withObject:[NSNumber numberWithInt:index]];
+    [self performSelectorInBackground:@selector(addSelectedContact:) withObject:[NSNumber numberWithInteger:index]];
 }
 
 -(void)addSelectedContact:(NSNumber*)index {

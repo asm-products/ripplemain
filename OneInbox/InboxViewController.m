@@ -198,7 +198,7 @@
         if (userLinks.objectId) {
             
             // userLinks has been saved to the cloud
-            [userLinks refreshInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            [userLinks fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
                 if (!error) {
                     
                     NSMutableArray* localMessageThreads = [appDelegate getLocalMessageThreads];
@@ -807,14 +807,12 @@
     NSMutableArray* userIDs = [[unreadMarkers allKeys] mutableCopy];
     
     // Remove current user
-    int currentUserEntry;
     for (int i = 0; i < [userIDs count]; i++) {
         if ([[userIDs objectAtIndex:i] isEqualToString:[PFUser currentUser].objectId]) {
-            currentUserEntry = i;
+            [userIDs removeObjectAtIndex:i];
             break;
         }
     }
-    [userIDs removeObjectAtIndex:currentUserEntry];
     
     // Separate into users whose names we've already stored and users whose names we haven't yet stored
     NSMutableArray* unknownUserIDs = [NSMutableArray array];
@@ -905,7 +903,7 @@
     PFObject* userLinks = [appDelegate getUserLinks];
     
     // Get latest version of userLinks from the cloud
-    [userLinks refreshInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+    [userLinks fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         
         // Get latest _messages from cloud object
         _messages = [[userLinks objectForKey:@"ReceivedLinks"] mutableCopy];
@@ -955,7 +953,7 @@
         
         ViewController* controller = segue.destinationViewController;
         
-        int messagesArrayEntry = [self.tableView indexPathForSelectedRow].row;
+        NSInteger messagesArrayEntry = [self.tableView indexPathForSelectedRow].row;
         NSMutableDictionary* messageThread = [[_messages objectAtIndex:messagesArrayEntry] mutableCopy];
         controller.messageThread = messageThread;
         
@@ -971,8 +969,6 @@
         // Remove swipe gesture since we're leaving the main view
         //-------------------------------------------------------
         [parentDelegate removeSwipeGesture];
-        
-        SettingsViewController* controller = segue.destinationViewController;
         
         [MFRAnalytics trackEvent:@"Settings screen displayed"];
     }
@@ -1051,12 +1047,12 @@
         tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                                                                   initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(exitContactsButtonPressed)];
     
-        [self presentModalViewController:navController animated:YES];
+        [self presentViewController:navController animated:YES completion:nil];
     }
 }
 
 -(void)exitContactsButtonPressed {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
     [parentDelegate addSwipeGesture];
 }
 

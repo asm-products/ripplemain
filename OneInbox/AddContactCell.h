@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @protocol AddContactCellDelegate
--(void)addContactAtIndex:(int)index;
+-(void)addContactAtIndex:(NSInteger)index;
 @end
 
 @interface AddContactCell : UITableViewCell {
     
     @public
     id <AddContactCellDelegate> delegate;
-    int _index;
+    NSInteger _index;
 }
 
 @property (nonatomic, retain) UILabel* usernameLabel;

@@ -21,7 +21,7 @@
     
     @public
     id <DeleteMessageDelegate> deleteMessageDelegate;
-    int inboxEntry;
+    NSInteger inboxEntry;
 }
 
 @property (nonatomic, retain) IBOutlet UITextView* messageView;

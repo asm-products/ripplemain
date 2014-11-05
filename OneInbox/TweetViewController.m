@@ -11,7 +11,7 @@
 #import <Parse/Parse.h>
 #import "MFRAnalytics.h"
 
-@interface TweetViewController () {
+@interface TweetViewController () <HPGrowingTextViewDelegate> {
     NSTimeInterval _animationDuration;
     UIViewAnimationCurve _animationCurve;
     CGFloat _viewPositionWhenKeyboardRevealed;
@@ -75,8 +75,8 @@
 
 #pragma mark - Character label
 -(void)updateCharacterLabel {
-    int characterCount = 140 - [_tweetView.messageView.text length];
-    _characterLabel.text = [NSString stringWithFormat:@"%i", characterCount];
+    NSInteger characterCount = 140 - [_tweetView.messageView.text length];
+    _characterLabel.text = [NSString stringWithFormat:@"%li", (long)characterCount];
     
     if (characterCount < 0) {
         [_characterLabel setTextColor:[UIColor redColor]];
