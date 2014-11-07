@@ -292,8 +292,8 @@
     }
 }
 
--(void)setViewTitle:(NSString*)title {
-    self.navigationController.navigationBar.topItem.title = title;
+-(void)setViewTitle:(NSString*)newTitle {
+    self.navigationController.navigationBar.topItem.title = newTitle;
 }
 
 #pragma mark - Action sheet delegate
