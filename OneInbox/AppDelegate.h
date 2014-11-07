@@ -28,6 +28,7 @@
 @property (nonatomic, retain) NSMutableDictionary* currentUserDefaults;
 @property (nonatomic, retain) NSMutableArray* localMessageThreads;
 @property (nonatomic, retain) NSNumber* friendInvitePromptTally;
+@property (nonatomic, assign) BOOL inboxShouldRefresh;
 
 - (void)showInboxNavigationController;
 - (void)showComposeNavigationController;
@@ -41,9 +42,6 @@
 -(void)storeUserLinks:(PFObject*)uL;
 
 -(void)clearContacts;
-
--(BOOL)inboxShouldRefresh;
--(void)setShouldInboxRefresh:(BOOL)b;
 
 -(BOOL)inboxTableShouldReload;
 -(void)setInboxToReload:(BOOL)b;

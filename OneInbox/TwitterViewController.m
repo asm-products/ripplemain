@@ -17,12 +17,6 @@
 
 @implementation TwitterViewController
 
-@synthesize notConnectedLabel = _notConnectedLabel;
-@synthesize linkButton = _linkButton;
-@synthesize unlinkButton = _unlinkButton;
-@synthesize usernameLabel = _usernameLabel;
-@synthesize loadingWheel = _loadingWheel;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

@@ -20,13 +20,6 @@
 
 @implementation InboxCell
 
-@synthesize senderLabel = _senderLabel;
-@synthesize messageLabel = _messageLabel;
-@synthesize dateLabel = _dateLabel;
-@synthesize unreadImageView = _unreadImageView;
-@synthesize linkImageView = _linkImageView;
-@synthesize sendingWheel = _sendingWheel;
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

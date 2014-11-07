@@ -16,7 +16,6 @@
     
     PFUser* _user;
     PFObject* _userLinks;
-    BOOL _shouldRefreshInbox;
     BOOL _shouldReloadInboxTable;
     NSMutableArray* _contacts;
     BOOL _usingFriendRelations;
@@ -28,15 +27,6 @@
     BOOL _shouldReloadFriendRequestsVC;
 //    BOOL _newUser;
 }
-
-@synthesize linkImages = _linkImages;
-@synthesize largeLinkImages = _largeLinkImages;
-@synthesize parentViewController = _parentViewController;
-@synthesize usernameFullNames = _usernameFullNames;
-@synthesize friendRequests = _friendRequests;
-@synthesize currentUserDefaults = _currentUserDefaults;
-@synthesize localMessageThreads = _localMessageThreads;
-@synthesize friendInvitePromptTally = _friendInvitePromptTally;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -127,7 +117,7 @@
         [self getCurrentUserDefaultsFromNSUserDefaults];
     }
     
-    _shouldRefreshInbox = NO;
+    self.inboxShouldRefresh = NO;
     _shouldReloadInboxTable = NO;
     
     //--------------------------------------
@@ -190,7 +180,7 @@
         [((InboxViewController*)[viewControllers objectAtIndex:0]) refreshInbox:self];
     }
     else {
-        _shouldRefreshInbox = YES;
+        self.inboxShouldRefresh = YES;
     }
     
     // Refresh contacts
@@ -627,7 +617,7 @@
 //    if ((InboxViewController*)[self.parentViewController.inboxNavigationController.viewControllers objectAtIndex:0]) {
 //        [(InboxViewController*)[self.parentViewController.inboxNavigationController.viewControllers objectAtIndex:0] getMessageThreadsForUser:self];
     } else {
-        _shouldRefreshInbox = YES;
+        self.inboxShouldRefresh = YES;
     }
 }
 
@@ -727,14 +717,6 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
 
 -(void)markContactsVCAsCreated {
     _contactsVCHasBeenCreated = YES;
-}
-
--(BOOL)inboxShouldRefresh {
-    return _shouldRefreshInbox;
-}
-
--(void)setShouldInboxRefresh:(BOOL)b {
-    _shouldRefreshInbox = b;
 }
 
 -(BOOL)inboxTableShouldReload {

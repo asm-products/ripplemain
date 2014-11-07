@@ -19,11 +19,6 @@
 
 @implementation AddContactCell
 
-@synthesize usernameLabel = _usernameLabel;
-@synthesize addButton = _addButton;
-@synthesize isContactButton = _isContactButton;
-@synthesize pendingButton = _pendingButton;
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

@@ -34,15 +34,6 @@
 
 @implementation ContactsViewController
 
-@synthesize linkObject = _linkObject;
-@synthesize contactsTableView = _contactsTableView;
-@synthesize sendButton = _sendButton;
-@synthesize composeButton = _composeButton;
-@synthesize addContactsButton = _addContactsButton;
-@synthesize messageBody = _messageBody;
-@synthesize contactsTableSections = _contactsTableSections;
-@synthesize messageThread = _messageThread;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

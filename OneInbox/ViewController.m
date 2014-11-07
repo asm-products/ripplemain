@@ -60,27 +60,6 @@
 
 @implementation ViewController
 
-@synthesize messageView = _messageView;
-@synthesize fromLabel = _fromLabel;
-@synthesize nameLabel = _nameLabel;
-@synthesize discardButton = _discardButton;
-@synthesize messageThread = _messageThread;
-@synthesize messageText = _messageText;
-@synthesize loadingWheel = _loadingWheel;
-@synthesize markAsUnreadButton = _markAsUnreadButton;
-@synthesize forwardButton = _forwardButton;
-@synthesize fixedSpace = _fixedSpace;
-@synthesize replyView = _replyView;
-@synthesize messages = _messages;
-@synthesize scrollView = _scrollView;
-
-@synthesize progressView = _progressView;
-@synthesize replyTimer = _replyTimer;
-
-@synthesize sendingFailedLabel = _sendingFailedLabel;
-@synthesize sendingFailedRetryButton = _sendingFailedRetryButton;
-@synthesize sendingFailedDeleteButton = _sendingFailedDeleteButton;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

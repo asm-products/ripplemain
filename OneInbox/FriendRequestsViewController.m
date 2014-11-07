@@ -17,12 +17,6 @@
 
 @implementation FriendRequestsViewController
 
-@synthesize friendRequestsTableView = _friendRequestsTableView;
-@synthesize receivedRequests = _receivedRequests;
-
-@synthesize addingFriendWheel = _addingFriendWheel;
-@synthesize maskView = _maskView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

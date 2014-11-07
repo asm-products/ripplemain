@@ -10,9 +10,6 @@
 
 @implementation MFRMessageEntryView
 
-@synthesize messageView = _messageView;
-@synthesize sendButton = _sendButton;
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

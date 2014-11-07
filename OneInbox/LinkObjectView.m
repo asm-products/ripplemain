@@ -13,15 +13,6 @@
     BOOL _imageEditingToolsDisplayed;
 }
 
-@synthesize view = _view;
-@synthesize titleTextView = _titleTextView;
-@synthesize smallTitleTextView = _smallTitleTextView;
-@synthesize linkImageView = _linkImageView;
-@synthesize previousImageButton = _previousImageButton;
-@synthesize nextImageButton = _nextImageButton;
-@synthesize removeImageButton = _removeImageButton;
-@synthesize editImageButton = _editImageButton;
-@synthesize imageLoadingWheel = _imageLoadingWheel;
 
 -(id)initWithFrame:(CGRect)frame title:(NSString*)title delegate:(id)del {
     

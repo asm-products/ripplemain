@@ -18,14 +18,6 @@
 
 @implementation AddContactsViewController
 
-@synthesize usernameTextField = _usernameTextField;
-@synthesize usersFound = _usersFound;
-@synthesize foundUsersTable = _foundUsersTable;
-@synthesize loadingWheel = _loadingWheel;
-
-@synthesize addingFriendWheel = _addingFriendWheel;
-@synthesize maskView = _maskView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

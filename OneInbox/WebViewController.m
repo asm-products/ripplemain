@@ -22,14 +22,6 @@
 
 @implementation WebViewController
 
-@synthesize linkWebView = _linkWebView;
-@synthesize linkObject = _linkObject;
-@synthesize toolbar = _toolbar;
-@synthesize webBackButton = _webBackButton;
-@synthesize webForwardButton = _webForwardButton;
-@synthesize shareButton = _shareButton;
-@synthesize loadingWheel = _loadingWheel;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

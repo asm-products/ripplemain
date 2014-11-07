@@ -17,9 +17,6 @@
     NSUInteger _selectedImageNumber;
 }
 
-@synthesize imageURL = _imageURL;
-@synthesize possibleImageURLs = _possibleImageURLs;
-
 -(id)initWithURL:(NSURL*)url title:(NSString*)title
 {
     self = [super init];

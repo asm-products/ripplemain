@@ -15,8 +15,6 @@
 
 @implementation MySignUpViewController
 
-@synthesize fieldsBackground;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

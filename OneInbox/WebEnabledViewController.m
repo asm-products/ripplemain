@@ -25,10 +25,6 @@
 
 @implementation WebEnabledViewController
 
-@synthesize movingView = _movingView;
-@synthesize linkObject = _linkObject;
-@synthesize linkObjectView = _linkObjectView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

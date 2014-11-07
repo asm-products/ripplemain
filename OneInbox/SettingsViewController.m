@@ -19,9 +19,6 @@
 
 @implementation SettingsViewController
 
-@synthesize navBar = _navBar;
-@synthesize settingsTableView = _settingsTableView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

@@ -21,10 +21,6 @@
 
 @implementation TweetViewController
 
-@synthesize tweetView = _tweetView;
-@synthesize characterLabel = _characterLabel;
-@synthesize loadingWheel = _loadingWheel;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

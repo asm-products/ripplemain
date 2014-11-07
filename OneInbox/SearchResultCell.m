@@ -17,10 +17,6 @@
 
 @implementation SearchResultCell
 
-@synthesize linkTitleLabel = _linkTitleLabel;
-@synthesize urlLabel = _urlLabel;
-@synthesize blurbTextView = _blurbTextView;
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

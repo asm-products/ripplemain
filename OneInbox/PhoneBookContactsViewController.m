@@ -21,9 +21,6 @@
 
 @implementation PhoneBookContactsViewController
 
-@synthesize contactsTableView = _contactsTableView;
-@synthesize sendButton = _sendButton;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

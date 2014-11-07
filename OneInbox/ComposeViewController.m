@@ -27,17 +27,6 @@
 
 @implementation ComposeViewController
 
-@synthesize linkTextField = _linkTextField;
-@synthesize loadingWheel = _loadingWheel;
-@synthesize inboxButton = _inboxButton;
-@synthesize contactsButton = _contactsButton;
-@synthesize searchResultsTableView = _searchResultsTableView;
-@synthesize displayNextSearchResultsButton = _displayNextSearchResultsButton;
-@synthesize displayPreviousSearchResultsButton = _displayPreviousSearchResultsButton;
-@synthesize searchingWheel = _searchingWheel;
-@synthesize searchResultsMaskView = _searchResultsMaskView;
-@synthesize shareView = _shareView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

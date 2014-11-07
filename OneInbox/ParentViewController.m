@@ -20,13 +20,6 @@
 
 @implementation ParentViewController
 
-@synthesize pageViewController = _pageViewController;
-@synthesize modelArray = _modelArray;
-@synthesize composeNavigationController = _composeNavigationController;
-@synthesize inboxNavigationController = _inboxNavigationController;
-@synthesize contactsNavigationController = _contactsNavigationController;
-@synthesize navigationControllers = _navigationControllers;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

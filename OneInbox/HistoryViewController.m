@@ -15,10 +15,6 @@
 
 @implementation HistoryViewController
 
-@synthesize historyTableView = _historyTableView;
-@synthesize sendingWheel = _sendingWheel;
-@synthesize sendingLabel = _sendingLabel;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
