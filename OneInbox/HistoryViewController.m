@@ -75,13 +75,6 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - Swapping views
--(IBAction)pushInboxViewController
-{
-    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate showInboxNavigationController];
-}
-
 #pragma mark - Updating view for sending status
 -(void)displaySending {
     _sendingLabel.text = @"Sending...";

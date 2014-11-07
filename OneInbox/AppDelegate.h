@@ -30,9 +30,6 @@
 @property (nonatomic, retain) NSNumber* friendInvitePromptTally;
 @property (nonatomic, assign) BOOL inboxShouldRefresh;
 
-- (void)showInboxNavigationController;
-- (void)showComposeNavigationController;
-- (void)showContactsNavigationController;
 - (void)showLoginViewController;
 
 -(void)showLoginViewControllerIfNotLoggedIn;
