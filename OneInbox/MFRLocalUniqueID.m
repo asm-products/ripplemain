@@ -15,7 +15,7 @@
     CFUUIDRef uuidRef = CFUUIDCreate(NULL);
     CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
     CFRelease(uuidRef);
-    return (__bridge NSString *)uuidStringRef;
+    return (__bridge_transfer NSString *)uuidStringRef;
 }
 
 @end

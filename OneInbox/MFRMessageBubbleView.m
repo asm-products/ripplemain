@@ -89,7 +89,10 @@
         CGPoint end = CGPointMake(rect.origin.x, rect.size.height);
 //        CGContextDrawLinearGradient(context, [self greenGradient], start, end, 0);
         CGContextDrawLinearGradient(context, [self gradientWithFirstColor:[UIColor colorWithRed:52/255.0 green:152/255.0 blue:219/255.0 alpha:1.0] secondColor:[UIColor colorWithRed:41/255.0 green:128/255.0 blue:185/255.0 alpha:1.0]], start, end, 0);
+        
     }
+    
+    CFRelease(outlinePath);
     
     CGContextDrawPath(context, kCGPathFillStroke);
     
@@ -121,7 +124,7 @@
     
     CGGradientRef normalGradient = CGGradientCreateWithColors(space, (__bridge CFArrayRef)normalGradientColors, locations);
     CGColorSpaceRelease(space);
-    
+    CFAutorelease(normalGradient);
     return normalGradient;
 }
 
