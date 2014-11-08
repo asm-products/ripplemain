@@ -522,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peL-zw-nKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-350" y="-683"/>
+            <point key="canvasLocation" x="-332" y="-683"/>
         </scene>
         <!--Add Contacts-->
         <scene sceneID="Jcx-8g-n2y">
@@ -587,7 +587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWT-ci-tvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869" y="-683"/>
+            <point key="canvasLocation" x="896" y="-745"/>
         </scene>
         <!--Phone Book Contacts View Controller-->
         <scene sceneID="Zcz-QX-Hwa">

@@ -43,8 +43,8 @@ static const NSInteger TagOffset = 1000;
 	tabButtonsContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	[self.view addSubview:tabButtonsContainerView];
 
-	rect.origin.y = 64 + self.tabBarHeight;
-	rect.size.height = self.view.bounds.size.height - self.tabBarHeight - 64;
+	rect.origin.y = 64 + self.tabBarHeight + 20;
+	rect.size.height = self.view.bounds.size.height - self.tabBarHeight - 64 - 20;
 	contentContainerView = [[UIView alloc] initWithFrame:rect];
 	contentContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	[self.view addSubview:contentContainerView];
