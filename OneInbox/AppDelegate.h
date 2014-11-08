@@ -38,8 +38,6 @@
 -(PFObject*)getUserLinks;
 -(void)storeUserLinks:(PFObject*)uL;
 
--(void)clearContacts;
-
 -(BOOL)inboxTableShouldReload;
 -(void)setInboxToReload:(BOOL)b;
 

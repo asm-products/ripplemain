@@ -35,7 +35,4 @@
 -(IBAction)backButtonPressed:(id)sender;
 -(IBAction)forwardButtonPressed:(id)sender;
 
--(IBAction)sendButtonPressed:(id)sender;
-//-(IBAction)discardButtonPressed:(id)sender;
-
 @end

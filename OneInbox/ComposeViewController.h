@@ -23,7 +23,7 @@
 -(void)removeSwipeGesture;
 @end
 
-@interface ComposeViewController : WebEnabledViewController<UITextFieldDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate, HPGrowingTextViewDelegate> {
+@interface ComposeViewController : WebEnabledViewController<UITextFieldDelegate, UITextViewDelegate, HPGrowingTextViewDelegate> {
     
     @public
 //    id <DeleteLinkDelegate> deleteLinkDelegate;

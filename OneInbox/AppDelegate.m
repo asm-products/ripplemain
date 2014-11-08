@@ -25,7 +25,6 @@
     BOOL _shouldFetchContacts;
     BOOL _shouldReloadContacts;
     BOOL _shouldReloadFriendRequestsVC;
-//    BOOL _newUser;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -58,33 +57,6 @@
      UIRemoteNotificationTypeAlert |
      UIRemoteNotificationTypeSound];
     
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
-                                                             bundle: nil];
-    
-//    _parentViewController = (ParentViewController*)[mainStoryboard
-//                                                    instantiateViewControllerWithIdentifier: @"parentViewController"];
-    
-    
-    
-    // HACK
-    // Make a call to the parentViewController so that its subviews are retained when the app enters the background
-//    [_parentViewController view];
-    
-    /*
-    // Set up views
-    self.composeNavigationController = (NonRotatingNavigationController*)[mainStoryboard
-                                                                   instantiateViewControllerWithIdentifier: @"composeNavigationController"];
-    
-    self.contactsNavigationController = (NonRotatingNavigationController*)[mainStoryboard
-                                                                  instantiateViewControllerWithIdentifier: @"contactsNavigationController"];
-    
-    NSArray *viewControllers = self.composeNavigationController.viewControllers;
-    ((ComposeViewController*)[viewControllers objectAtIndex:0])->_originalLink = YES;
-    
-    NSArray *contactsViewControllers = self.contactsNavigationController.viewControllers;
-    ((ContactsViewController*)[contactsViewControllers objectAtIndex:0])->_sendingLink = NO;
-    */
-    
     // Create the log in view controller
     self.loginViewController = [[MFRLoginViewController alloc] init];
     [self.loginViewController setFields:PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton | PFLogInFieldsPasswordForgotten];
@@ -96,13 +68,6 @@
     [self.signUpViewController setFields:PFSignUpFieldsDefault | PFSignUpFieldsAdditional];
     [self.loginViewController setSignUpController:self.signUpViewController];
 
-    //---------------------------------------
-    // Uncomment to logout on loading the app
-    //---------------------------------------
-//    if ([PFUser currentUser]){
-//        [PFUser logOut];
-//    }
-    
     [[self window] makeKeyAndVisible];
     
     self.parentViewController = (ParentViewController*)self.window.rootViewController;

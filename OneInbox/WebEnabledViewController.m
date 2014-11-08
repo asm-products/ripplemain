@@ -462,4 +462,12 @@
     return sortedImageURLs;
 }
 
+-(void)selectSearchResultWithURL:(NSURL*)url title:(NSString*)title html:(NSString*)html {
+    [MFRAnalytics trackEvent:@"Search result chosen to send"];
+    _url = url;
+    _html = html;
+    _linkTitle = title;
+//    [self saveLinkObject];
+//    [self displayLink];
+}
 @end

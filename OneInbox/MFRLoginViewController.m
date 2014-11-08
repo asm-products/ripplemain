@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
     
-//    [self.logInView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"main_background.png"]]];
     [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"RippleLogo200"]]];
 }
 

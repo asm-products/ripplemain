@@ -27,8 +27,6 @@
 
 -(void)refreshInbox:(id)sender;
 -(void)getLocalMessageThreadsAndReloadInboxTableView;
-//-(void)getMessageThreadsForUser:(id)sender;
-//-(void)addNewMessageThread:(NSMutableDictionary*)messageThread;
 
 -(void)updateBadge;
 

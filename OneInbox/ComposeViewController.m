@@ -222,7 +222,6 @@
     
     if (_originalLink) {
         // Composing original message, so get and display image for link
-//        self.linkObjectView.removeImageButton.hidden = NO;
         self.linkObjectView.editImageButton.hidden = NO;
         [self performSelectorInBackground:@selector(fetchImageForLink) withObject:nil];
     } else {
@@ -295,17 +294,11 @@
 #pragma mark - Swapping views
 -(IBAction)pushInboxViewController
 {
-//    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    [appDelegate showInboxNavigationController];
-    
     [parentDelegate navigateLeftToInbox];
 }
 
 -(IBAction)pushContactsViewController
 {
-//    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    [appDelegate showContactsNavigationController];
-    
     [parentDelegate navigateRightToContacts];
 }
 
@@ -333,9 +326,6 @@
         controller->pushedFromWebView = NO;
         controller->_sendingLink = YES;
         controller.messageBody = _shareView.messageView.text;
-//        if (!_originalLink) {
-//            controller->deleteLinkDelegate = deleteLinkDelegate;
-//        }
     }
 }
 

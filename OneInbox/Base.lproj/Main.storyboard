@@ -139,7 +139,7 @@
         <!--Messages-->
         <scene sceneID="uRh-sW-khK">
             <objects>
-                <viewController id="ee0-E2-5d5" customClass="InboxViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InboxViewController" id="ee0-E2-5d5" customClass="InboxViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vfC-Cq-fni"/>
                         <viewControllerLayoutGuide type="bottom" id="EI4-Ua-1oS"/>
@@ -770,10 +770,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="5Ax-76-XyU"/>
+        <segue reference="AgY-RQ-7wz"/>
+        <segue reference="y6h-tH-hRZ"/>
         <segue reference="QjS-dG-25q"/>
         <segue reference="IVZ-uy-cpz"/>
-        <segue reference="LAc-Lx-CAK"/>
-        <segue reference="5Ax-76-XyU"/>
-        <segue reference="Nid-ep-Snr"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -13,7 +13,7 @@
 #import "TweetViewController.h"
 #import "TwitterViewController.h"
 
-@interface WebViewController () {
+@interface WebViewController ()<WebViewDelegate> {
     int _pageIndex;
     int _maxReachedPageIndex;
 }
