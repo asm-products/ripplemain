@@ -98,11 +98,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark - View setup
 -(void)setupNavigationBar {
     self.navigationController.navigationBar.topItem.title = @"Contacts";

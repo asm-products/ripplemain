@@ -58,12 +58,6 @@
     _imageHasBeenRemoved = NO;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Swapping views
 -(void)presentWebView:(BOOL)presentedFromSearch
 {

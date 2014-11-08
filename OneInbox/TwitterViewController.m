@@ -45,12 +45,6 @@
     [self displayCorrectUIElements];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Displaying according to Twitter user status
 -(void)displayCorrectUIElements {
     if ([PFTwitterUtils isLinkedWithUser:[PFUser currentUser]]) {

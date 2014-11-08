@@ -185,12 +185,6 @@
     return NO;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Displaying link
 -(void)displayLinkOrSearchResultsFromString:(NSString*)linkString {
     [self getLinkDataFromURLString:_linkTextField.text];

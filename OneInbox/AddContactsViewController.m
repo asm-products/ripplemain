@@ -49,12 +49,6 @@
     [self showAddingFriendWheel:nil];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Text field delegate
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {

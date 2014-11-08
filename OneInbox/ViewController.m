@@ -913,12 +913,6 @@
     _loadingWheel.hidden = !show;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Saving linkObject
 -(void)saveLinkObject {
     self.linkObject = [[LinkObject alloc] initWithURL:_url

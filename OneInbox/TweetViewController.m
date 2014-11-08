@@ -63,12 +63,6 @@
     [_tweetView.messageView becomeFirstResponder];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Character label
 -(void)updateCharacterLabel {
     NSInteger characterCount = 140 - [_tweetView.messageView.text length];
