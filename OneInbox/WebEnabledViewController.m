@@ -83,8 +83,6 @@
                                    initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
     
-    //    [self.navigationController pushViewController:vc animated:YES];
-//    [self presentViewController:vc animated:YES completion:nil];
     [[vc.view layer] addAnimation:animation forKey:@"SwitchToView1"];
 }
 
@@ -237,8 +235,6 @@
         // Display first possible image url
         [self displayImageFromURL:[_linkObject getSelectedPossibleHTMLImageURL]];
         
-        // Display image selection buttons
-//        [self performSelectorOnMainThread:@selector(displayImageSelectionControls) withObject:nil waitUntilDone:NO];
     } else {
         // No image, so hide link image view
         [_linkObjectView setLoading:NO];
