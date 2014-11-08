@@ -92,6 +92,7 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     // If view loaded from web view and link has been passed on or deleted, dismiss web view
     if (pushedFromWebView){
         [webViewDelegate dismissWebView];

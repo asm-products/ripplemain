@@ -89,7 +89,6 @@
 #pragma mark - Accessing and reading URL/HTML
 -(void)getLinkDataFromURLString:(NSString*)link
 {
-    BOOL searchRequired = YES;
     //-----------------------------------------
     // Check whether this is a link or a search
     //-----------------------------------------
@@ -113,7 +112,6 @@
         //---------------------
         _html = [self getHTMLFromURL:_url];
         if (_html){
-            searchRequired = NO;
             _linkTitle = [self getTitleFromHTML:_html];
             if (_linkTitle == nil) {
                 _linkTitle = [NSString stringWithString:httpLink];

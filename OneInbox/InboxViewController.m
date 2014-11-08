@@ -90,6 +90,7 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     //-------------------------------------
     // Stop refreshing when view disappears
     //-------------------------------------
