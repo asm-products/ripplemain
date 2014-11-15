@@ -1,11 +1,14 @@
 (function (window, chrome, $, undefined) {
 var internals = {};
 
+var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 var friends = [
-  "David Brooks", "Laura Daniels", "Seb Merrick", "Fiona Ward"
+  {"id": 1, "text": "David Brooks"},
+  {"id": 2, "text": "Laura Daniels"},
+  {"id": 3, "text": "Seb Merrick"},
+  {"id": 4, "text": "Fiona Ward"}
 ];
-
 /**
  * Retrieve Chromes active tab
  *
@@ -25,33 +28,6 @@ internals.getActiveTabUrl = function(next) {
   });
 };
 
-/**
- * Get the friends matching the query
- * provided by the typeahead plugin.
- *
- * SHOULD BE SWAPPED OUT FOR AN API CALL
- * TO THE RIPPLE SERVICE TO USER'S GET FRIENDS
- *
- * @param  {String}   query
- * @param  {Function} next
- * @return {Array}
- */
-internals.getFriends = function (query, next) {
-  var matches = [];
-  var substrRegex = new RegExp(query, 'i');
-
-  $.each(friends, function(i, str) {
-    if (substrRegex.test(str)) {
-      // the typeahead jQuery plugin expects suggestions
-      // to be an object
-      matches.push({ value: str });
-    }
-  });
-
-  return next(matches);
-};
-
-
 document.addEventListener('DOMContentLoaded', function () {
   if (chrome) {
     internals.getActiveTabUrl(function(tab) {
@@ -69,13 +45,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  $('.js-friends').typeahead({
-    hint: true,
-    highlight: true,
-    minLength: 1,
-  }, {
-    name: 'friends',
-    source: internals.getFriends
+  $('.js-friends').select2({
+    multiple: true,
+    data: friends,
+    createSearchChoice: function (email, data) {
+      var matches = $(data).filter(function () {
+        return this.text.toLowerCase() === email.toLowerCase();
+      });
+      // if the text isn't a valid email or the email
+      // already exists, don't show results
+      if (!emailRegex.test(email) || matches.length) {
+        return null;
+      }
+
+      return { id: email, text: email };
+    }
   });
 });
 
