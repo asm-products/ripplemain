@@ -39,9 +39,9 @@ img {
   margin: 0;
 }
 
-.title .page-title {
+.title .page-title, .title .url {
   display: block;
-  width: 300px;
+  width: 370px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
