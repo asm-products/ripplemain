@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+     -->
+    <script src="assets/js/jquery-2.1.1.min.js"></script>
+    <script src="assets/js/typeahead.js"></script>
+    <script src="assets/js/popup.js"></script>
+  </head>
+  <body>
+    <div class="brand-bar">
+      <h1 class="brand">RIPPLE</h1>
+    </div>
+    <div class="container">
+      <div class="url-card">
+        <img class="site-image js-site-image pull-left" src="http://sites.google.com/site/edrexmusic/images/RippleDrop512.png">
+        <h2 class="title pull-left">
+          <span class="page-title js-title">RIPPLE</span>
+          <span class="url js-url">http://getripple.co</span>
+        </h2>
+        <div class="clearfix"></div>
+      </div>
+      <form action="#" type="POST">
+        <div class="form-group">
+          <textarea class="form-control" name="message" placeholder="Message (optional)"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control js-friends" placeholder="Type a friends name" />
+        </div>
+        <div class="form-group pull-right">
+          <a href="#" class="btn btn-link">Cancel</a>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
