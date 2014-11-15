@@ -1,14 +1,14 @@
 (function (window, chrome, $, undefined) {
 var internals = {};
 
+var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 var friends = [
-  {id: 1, text: "David Brooks"},
-  {id: 2, text: "Laura Daniels"},
-  {id: 3, text: "Seb Merrick"},
-  {id: 4, text: "Fiona Ward"}
+  {"id": 1, "text": "David Brooks"},
+  {"id": 2, "text": "Laura Daniels"},
+  {"id": 3, "text": "Seb Merrick"},
+  {"id": 4, "text": "Fiona Ward"}
 ];
-
 /**
  * Retrieve Chromes active tab
  *
@@ -48,24 +48,18 @@ document.addEventListener('DOMContentLoaded', function () {
   $('.js-friends').select2({
     multiple: true,
     data: friends,
-    createSearchChoice: function (name) {
-      return { id: name, text: name };
-    },
-    ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-        url: "/assets/friends.json",
-        dataType: 'json',
-        quietMillis: 250,
-        // data: function (term, page) {
-        //   return {
-        //     q: term, // search term
-        //   };
-        // },
-        results: function (data, page) { // parse the results into the format expected by Select2.
-            // since we are using custom formatting functions we do not need to alter the remote JSON data
-            return { results: data.items };
-        },
-        cache: true
-    },
+    createSearchChoice: function (email, data) {
+      var matches = $(data).filter(function () {
+        return this.text.toLowerCase() === email.toLowerCase();
+      });
+      // if the text isn't a valid email or the email
+      // already exists, don't show results
+      if (!emailRegex.test(email) || matches.length) {
+        return null;
+      }
+
+      return { id: email, text: email };
+    }
   });
 });
 
