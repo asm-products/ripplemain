@@ -148,6 +148,14 @@
     }
 }
 
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    if (textField.tag == 0) {
+        _keyboardTop = 0;
+        [self moveShareView];
+    }
+    return YES;
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     if (textField.tag == 0) {
