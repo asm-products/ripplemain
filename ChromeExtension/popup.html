@@ -3,6 +3,8 @@
   <head>
     <title>Getting Started Extension's Popup</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/select2/select2.css">
+    <link rel="stylesheet" href="assets/select2/select2-bootstrap.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
@@ -11,7 +13,7 @@
       - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
      -->
     <script src="assets/js/jquery-2.1.1.min.js"></script>
-    <script src="assets/js/typeahead.js"></script>
+    <script src="assets/select2/select2.min.js"></script>
     <script src="assets/js/popup.js"></script>
   </head>
   <body>
@@ -32,10 +34,9 @@
           <textarea class="form-control" name="message" placeholder="Message (optional)"></textarea>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control js-friends" placeholder="Type a friends name" />
+          <input type="hidden" class="form-control js-friends" multiple data-placeholder="Type a friends name"/>
         </div>
         <div class="form-group pull-right">
-          <a href="#" class="btn btn-link">Cancel</a>
           <button type="submit" class="btn btn-primary">Send</button>
         </div>
       </form>
