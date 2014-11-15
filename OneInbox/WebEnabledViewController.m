@@ -25,10 +25,6 @@
 
 @implementation WebEnabledViewController
 
-@synthesize movingView = _movingView;
-@synthesize linkObject = _linkObject;
-@synthesize linkObjectView = _linkObjectView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -62,12 +58,6 @@
     _imageHasBeenRemoved = NO;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Swapping views
 -(void)presentWebView:(BOOL)presentedFromSearch
 {
@@ -93,15 +83,12 @@
                                    initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
     
-    //    [self.navigationController pushViewController:vc animated:YES];
-//    [self presentViewController:vc animated:YES completion:nil];
     [[vc.view layer] addAnimation:animation forKey:@"SwitchToView1"];
 }
 
 #pragma mark - Accessing and reading URL/HTML
 -(void)getLinkDataFromURLString:(NSString*)link
 {
-    BOOL searchRequired = YES;
     //-----------------------------------------
     // Check whether this is a link or a search
     //-----------------------------------------
@@ -125,7 +112,6 @@
         //---------------------
         _html = [self getHTMLFromURL:_url];
         if (_html){
-            searchRequired = NO;
             _linkTitle = [self getTitleFromHTML:_html];
             if (_linkTitle == nil) {
                 _linkTitle = [NSString stringWithString:httpLink];
@@ -247,8 +233,6 @@
         // Display first possible image url
         [self displayImageFromURL:[_linkObject getSelectedPossibleHTMLImageURL]];
         
-        // Display image selection buttons
-//        [self performSelectorOnMainThread:@selector(displayImageSelectionControls) withObject:nil waitUntilDone:NO];
     } else {
         // No image, so hide link image view
         [_linkObjectView setLoading:NO];
@@ -476,4 +460,12 @@
     return sortedImageURLs;
 }
 
+-(void)selectSearchResultWithURL:(NSURL*)url title:(NSString*)title html:(NSString*)html {
+    [MFRAnalytics trackEvent:@"Search result chosen to send"];
+    _url = url;
+    _html = html;
+    _linkTitle = title;
+//    [self saveLinkObject];
+//    [self displayLink];
+}
 @end

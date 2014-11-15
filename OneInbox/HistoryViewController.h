@@ -14,8 +14,6 @@
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView* sendingWheel;
 @property (nonatomic, retain) IBOutlet UILabel* sendingLabel;
 
--(IBAction)pushInboxViewController;
-
 -(void)displaySending;
 -(void)informSuccess:(NSNumber*)success;
 

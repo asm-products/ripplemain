@@ -72,11 +72,6 @@
     //---------------
     NSDictionary* sender = [[NSDictionary alloc] initWithObjectsAndKeys:[PFUser currentUser].username, @"Username", nil];
     
-    // Date/time
-//    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
-//    [DateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-//    NSString* dateString = [NSString stringWithFormat:@"%@",[DateFormatter stringFromDate:[NSDate date]]];
-    
     NSString* gmtDateString = [MFRDateTime getCurrentGMTDateTimeString];
     
     NSDictionary* message = [[NSDictionary alloc] initWithObjectsAndKeys:body, @"Message", sender, @"Sender", gmtDateString, @"Date", [NSNumber numberWithInt:MFRLocalMessageStatusUnsent], @"SendingStatus", nil];
@@ -421,15 +416,6 @@
         }
     }
     return NO;
-    
-//    if (
-//        ([_messages count] == 1)
-//        &&
-//        [[[_messages objectAtIndex:0] objectForKey:@"Message"] isEqualToString:@""]
-//        ) {
-//        return YES;
-//    }
-//    return NO;
 }
 
 @end

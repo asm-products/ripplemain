@@ -21,9 +21,6 @@
 
 @implementation PhoneBookContactsViewController
 
-@synthesize contactsTableView = _contactsTableView;
-@synthesize sendButton = _sendButton;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -72,12 +69,6 @@
         [self getContactsWithAddressBook:addressBook];
 //        [self.tableView reloadData];
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -292,15 +283,15 @@
             
             BOOL phoneFound = NO;
             for(CFIndex i = 0; i < ABMultiValueGetCount(phones); i++) {
-                mobileLabel = (__bridge NSString*)ABMultiValueCopyLabelAtIndex(phones, i);
+                mobileLabel = (__bridge_transfer NSString*)ABMultiValueCopyLabelAtIndex(phones, i);
                 if([mobileLabel isEqualToString:(NSString *)kABPersonPhoneMobileLabel])
                 {
-                    [dOfPerson setObject:(__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i) forKey:@"Phone"];
+                    [dOfPerson setObject:(__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(phones, i) forKey:@"Phone"];
                     phoneFound = YES;
                 }
                 else if ([mobileLabel isEqualToString:(NSString*)kABPersonPhoneIPhoneLabel])
                 {
-                    [dOfPerson setObject:(__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i) forKey:@"Phone"];
+                    [dOfPerson setObject:(__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(phones, i) forKey:@"Phone"];
                     phoneFound = YES;
                     break ;
                 }
@@ -310,10 +301,19 @@
                 [self.contactsList addObject:dOfPerson];
             }
         }
+        CFRelease(phones);
+        
+        if (firstName) {
+            CFRelease(firstName);
+        }
+        if (lastName) {
+            CFRelease(lastName);
+        }
         
     }
     NSLog(@"Contacts = %@",self.contactsList);
     
+    CFRelease(allPeople);
     
     
     //----------------------------------------

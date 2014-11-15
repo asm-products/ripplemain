@@ -39,13 +39,6 @@
 
 @implementation InboxViewController
 
-@synthesize messages = _messages;
-@synthesize composeButton = _composeButton;
-@synthesize settingsButton = _settingsButton;
-@synthesize noMessagesView = _noMessagesView;
-@synthesize noMessagesLabelOne = _noMessagesLabelOne;
-@synthesize noMessagesLabelTwo = _noMessagesLabelTwo;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -80,9 +73,9 @@
     // Refresh links / reload inbox table view as required
     //----------------------------------------------------
     AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    if ([appDelegate inboxShouldRefresh]) {
+    if (appDelegate.inboxShouldRefresh) {
         [self refreshInbox:self];
-        [appDelegate setShouldInboxRefresh:NO];
+        appDelegate.inboxShouldRefresh = NO;
     } else if ([appDelegate inboxTableShouldReload]) {
         [self getLocalMessageThreadsAndReloadInboxTableView];
         [appDelegate setInboxToReload:NO];
@@ -97,6 +90,7 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     //-------------------------------------
     // Stop refreshing when view disappears
     //-------------------------------------
@@ -893,38 +887,36 @@
 }
 
 #pragma mark - Deleting message from inbox
-/*
 -(void)deleteMessage:(NSIndexPath*)indexPath
 {
-    int entryInt = indexPath.row;
+//    NSInteger entryInt = indexPath.row;
+//    
+//    // Delete link from Parse User
+//    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    PFObject* userLinks = [appDelegate getUserLinks];
+//    
+//    // Get latest version of userLinks from the cloud
+//    [userLinks fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+//        
+//        // Get latest _messages from cloud object
+//        _messages = [[userLinks objectForKey:@"ReceivedLinks"] mutableCopy];
+//        if (!_messages){
+//            _messages = [NSMutableArray array];
+//        }
     
-    // Delete link from Parse User
-    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    PFObject* userLinks = [appDelegate getUserLinks];
-    
-    // Get latest version of userLinks from the cloud
-    [userLinks fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        NSLog(@"MUST UPDATE DELETING FOR NEW LOCAL MESSAGE MODEL");
         
-        // Get latest _messages from cloud object
-        _messages = [[userLinks objectForKey:@"ReceivedLinks"] mutableCopy];
-        if (!_messages){
-            _messages = [NSMutableArray array];
-        }
-        
-        MUST UPDATE DELETING FOR NEW LOCAL MESSAGE MODEL
-        
-        // Delete first link from local array
-        [_messages removeObjectAtIndex:entryInt];
-        
-        // Save updated array of links to the cloud
-        [userLinks setObject:_messages forKey:@"ReceivedLinks"];
-        [userLinks saveInBackground];
-        
-        // Delete tableview cell
-        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationLeft];
-    }];
+//        // Delete first link from local array
+//        [_messages removeObjectAtIndex:entryInt];
+//        
+//        // Save updated array of links to the cloud
+//        [userLinks setObject:_messages forKey:@"ReceivedLinks"];
+//        [userLinks saveInBackground];
+//        
+//        // Delete tableview cell
+//        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationLeft];
+//    }];
 }
-*/
 
 #pragma mark - Replacing group message thread with updated one-to-one message thread
 /*

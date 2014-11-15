@@ -17,12 +17,6 @@
 
 @implementation FriendRequestsViewController
 
-@synthesize friendRequestsTableView = _friendRequestsTableView;
-@synthesize receivedRequests = _receivedRequests;
-
-@synthesize addingFriendWheel = _addingFriendWheel;
-@synthesize maskView = _maskView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -59,12 +53,6 @@
     
     // Set the application's badge according to the number of unread messages in the inbox
     [appDelegate setBadgeAccordingToInbox];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view delegate

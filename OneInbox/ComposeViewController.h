@@ -23,7 +23,7 @@
 -(void)removeSwipeGesture;
 @end
 
-@interface ComposeViewController : WebEnabledViewController<UITextFieldDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate, HPGrowingTextViewDelegate> {
+@interface ComposeViewController : WebEnabledViewController<UITextFieldDelegate, UITextViewDelegate, HPGrowingTextViewDelegate> {
     
     @public
 //    id <DeleteLinkDelegate> deleteLinkDelegate;
@@ -45,12 +45,8 @@
 
 //@property (nonatomic, retain) LinkObject* linkObject;
 
--(IBAction)pushInboxViewController;
 -(IBAction)pushContactsViewController;
 -(IBAction)clickOutsideTextField:(id)sender;
-
--(IBAction)displayNextSearchResults;
--(IBAction)displayPreviousSearchResults;
 
 -(void)showLinkElements;
 

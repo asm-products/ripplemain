@@ -19,9 +19,6 @@
 
 @implementation SettingsViewController
 
-@synthesize navBar = _navBar;
-@synthesize settingsTableView = _settingsTableView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,24 +28,12 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     if (animated) {
         [self.settingsTableView reloadData];
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Navigation
@@ -76,10 +61,6 @@
     }
 }
 
-//- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-//    return [[self.contactsTableSections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-//}
-
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ContactCell";
@@ -97,19 +78,16 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         } else if (indexPath.row == 1) {
             cell.textLabel.text = @"Name";
-//            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.detailLabel.text = [[PFUser currentUser] objectForKey:@"additional"];
             
         } else if (indexPath.row == 2) {
             cell.textLabel.text = @"Email";
-//            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.detailLabel.text = [PFUser currentUser].email;
         } else if (indexPath.row == 3) {
             cell.textLabel.text = @"Twitter";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
             if ([PFTwitterUtils isLinkedWithUser:[PFUser currentUser]]) {
                 cell.detailLabel.text = [PFTwitterUtils twitter].screenName;

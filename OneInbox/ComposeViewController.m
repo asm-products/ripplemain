@@ -27,17 +27,6 @@
 
 @implementation ComposeViewController
 
-@synthesize linkTextField = _linkTextField;
-@synthesize loadingWheel = _loadingWheel;
-@synthesize inboxButton = _inboxButton;
-@synthesize contactsButton = _contactsButton;
-@synthesize searchResultsTableView = _searchResultsTableView;
-@synthesize displayNextSearchResultsButton = _displayNextSearchResultsButton;
-@synthesize displayPreviousSearchResultsButton = _displayPreviousSearchResultsButton;
-@synthesize searchingWheel = _searchingWheel;
-@synthesize searchResultsMaskView = _searchResultsMaskView;
-@synthesize shareView = _shareView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -196,12 +185,6 @@
     return NO;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Displaying link
 -(void)displayLinkOrSearchResultsFromString:(NSString*)linkString {
     [self getLinkDataFromURLString:_linkTextField.text];
@@ -239,7 +222,6 @@
     
     if (_originalLink) {
         // Composing original message, so get and display image for link
-//        self.linkObjectView.removeImageButton.hidden = NO;
         self.linkObjectView.editImageButton.hidden = NO;
         [self performSelectorInBackground:@selector(fetchImageForLink) withObject:nil];
     } else {
@@ -312,17 +294,11 @@
 #pragma mark - Swapping views
 -(IBAction)pushInboxViewController
 {
-//    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    [appDelegate showInboxNavigationController];
-    
     [parentDelegate navigateLeftToInbox];
 }
 
 -(IBAction)pushContactsViewController
 {
-//    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    [appDelegate showContactsNavigationController];
-    
     [parentDelegate navigateRightToContacts];
 }
 
@@ -350,9 +326,6 @@
         controller->pushedFromWebView = NO;
         controller->_sendingLink = YES;
         controller.messageBody = _shareView.messageView.text;
-//        if (!_originalLink) {
-//            controller->deleteLinkDelegate = deleteLinkDelegate;
-//        }
     }
 }
 

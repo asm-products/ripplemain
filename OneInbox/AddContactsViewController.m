@@ -18,14 +18,6 @@
 
 @implementation AddContactsViewController
 
-@synthesize usernameTextField = _usernameTextField;
-@synthesize usersFound = _usersFound;
-@synthesize foundUsersTable = _foundUsersTable;
-@synthesize loadingWheel = _loadingWheel;
-
-@synthesize addingFriendWheel = _addingFriendWheel;
-@synthesize maskView = _maskView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -55,12 +47,6 @@
     _maskView = [[UIView alloc] initWithFrame:[self.view bounds]];
     _maskView.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
     [self showAddingFriendWheel:nil];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Text field delegate

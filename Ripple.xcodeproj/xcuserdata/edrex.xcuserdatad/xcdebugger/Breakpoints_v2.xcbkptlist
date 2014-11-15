@@ -77,7 +77,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "224"
             endingLineNumber = "224"
-            landmarkName = "-clearLinkData"
+            landmarkName = "-fetchImageForLink"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -167,22 +167,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OneInbox/LinkObjectView.m"
-            timestampString = "415617537.073165"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-initWithFrame:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "OneInbox/WebViewController.m"
             timestampString = "416229809.798337"
             startingColumnNumber = "9223372036854775807"
@@ -237,7 +221,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
             endingLineNumber = "109"
-            landmarkName = "-hideMessageToolbar"
+            landmarkName = "-showInboxButton"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -292,22 +276,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OneInbox/WebEnabledViewController.m"
-            timestampString = "416229296.599434"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
-            landmarkName = "-getOGImageFromHTML:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -317,7 +285,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "992"
             endingLineNumber = "992"
-            landmarkName = "-growScrollViewFrameHeightByHeight:"
+            landmarkName = "-moveReplyView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -363,7 +331,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "302"
             endingLineNumber = "302"
-            landmarkName = "-logInViewControllerDidCancelLogIn:"
+            landmarkName = "-signUpViewControllerDidCancelSignUp:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -379,7 +347,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "206"
             endingLineNumber = "206"
-            landmarkName = "-shouldAutorotate"
+            landmarkName = "-displayInboxAndScrollToTop:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -395,7 +363,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "452"
             endingLineNumber = "452"
-            landmarkName = "-tableView:numberOfRowsInSection:"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -411,8 +379,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "374"
             endingLineNumber = "374"
-            landmarkName = "@implementation InboxViewController"
-            landmarkType = "3">
+            landmarkName = "-orderMessageThreadsByTime:dateAscending:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -427,7 +395,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "174"
             endingLineNumber = "174"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkName = "-addSelectedContact:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -587,8 +555,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "354"
             endingLineNumber = "354"
-            landmarkName = "-reloadInboxTableView"
-            landmarkType = "5">
+            landmarkName = "@implementation InboxViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -698,9 +666,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "911"
-            endingLineNumber = "911"
-            landmarkName = "-getFriendInvitePromptTally"
-            landmarkType = "5">
+            endingLineNumber = "911">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -795,7 +761,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "844"
             endingLineNumber = "844"
-            landmarkName = "-sendOriginalMessage"
+            landmarkName = "-deleteMessageThreadLocallyButtonPressed:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -811,8 +777,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "852"
             endingLineNumber = "852"
-            landmarkName = "@implementation ViewController"
-            landmarkType = "3">
+            landmarkName = "-share"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -875,7 +841,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "821"
             endingLineNumber = "821"
-            landmarkName = "-retrySend"
+            landmarkName = "-sendOriginalMessage"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -891,7 +857,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "840"
             endingLineNumber = "840"
-            landmarkName = "-sendOriginalMessage"
+            landmarkName = "-deleteMessageThreadLocallyButtonPressed:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -907,8 +873,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "833"
             endingLineNumber = "833"
-            landmarkName = "@implementation ViewController"
-            landmarkType = "3">
+            landmarkName = "-deleteMessageThreadLocallyButtonPressed:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -923,7 +889,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "824"
             endingLineNumber = "824"
-            landmarkName = "-retrySend"
+            landmarkName = "-sendOriginalMessage"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1049,7 +1015,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "197"
             endingLineNumber = "197"
-            landmarkName = "-applicationWillEnterForeground:"
+            landmarkName = "-logInViewController:shouldBeginLogInWithUsername:password:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1065,7 +1031,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
             endingLineNumber = "198"
-            landmarkName = "-applicationWillEnterForeground:"
+            landmarkName = "-logInViewController:shouldBeginLogInWithUsername:password:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1081,7 +1047,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
             endingLineNumber = "200"
-            landmarkName = "-applicationWillEnterForeground:"
+            landmarkName = "-logInViewController:shouldBeginLogInWithUsername:password:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1113,7 +1079,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1060"
             endingLineNumber = "1060"
-            landmarkName = "-growingTextViewDidEndEditing:"
+            landmarkName = "-growingTextView:willChangeHeight:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1195,36 +1161,6 @@
             endingLineNumber = "90"
             landmarkName = "-connectToTwitter:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TwitterViewController connectToTwitter:]"
-                  moduleName = "Ripple"
-                  urlString = "file:///Users/edrex/Documents/ripplemain/OneInbox/TwitterViewController.m"
-                  timestampString = "436780829.283368"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "249">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__42-[TwitterViewController connectToTwitter:]_block_invoke"
-                  moduleName = "Ripple"
-                  urlString = "file:///Users/edrex/Documents/ripplemain/OneInbox/TwitterViewController.m"
-                  timestampString = "436780829.283549"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "63">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1382,9 +1318,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "908"
-            endingLineNumber = "908"
-            landmarkName = "-storeLocalMessageThreads:"
-            landmarkType = "5">
+            endingLineNumber = "908">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1399,7 +1333,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
-            landmarkName = "-viewDidAppear:"
+            landmarkName = "-viewWillDisappear:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1415,23 +1349,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "615"
             endingLineNumber = "615"
-            landmarkName = "-getCurrentUserDefaultsFromNSUserDefaults"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OneInbox/AppDelegate.m"
-            timestampString = "425044605.277381"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "788"
-            endingLineNumber = "788"
-            landmarkName = "-updateUsernameFullNamesInNSUserDefaults"
+            landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1446,9 +1364,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "922"
-            endingLineNumber = "922"
-            landmarkName = "-updateLocalMessageThreadsInNSUserDefaults"
-            landmarkType = "5">
+            endingLineNumber = "922">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1462,9 +1378,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "935"
-            endingLineNumber = "935"
-            landmarkName = "-updateFriendInvitePromptTallyInNSUserDefaults"
-            landmarkType = "5">
+            endingLineNumber = "935">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1479,7 +1393,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "610"
             endingLineNumber = "610"
-            landmarkName = "-getCurrentUserDefaultsFromNSUserDefaults"
+            landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1510,9 +1424,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1106"
-            endingLineNumber = "1106"
-            landmarkName = "-considerPromptingFriendInvite"
-            landmarkType = "5">
+            endingLineNumber = "1106">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1527,23 +1439,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
-            landmarkName = "-viewDidAppear:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OneInbox/AppDelegate.m"
-            timestampString = "425550472.77514"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "480"
-            endingLineNumber = "480"
-            landmarkName = "-fetchUserLinksFromCloud"
+            landmarkName = "-viewWillDisappear:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1559,7 +1455,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "650"
             endingLineNumber = "650"
-            landmarkName = "-createUserLinksObject"
+            landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

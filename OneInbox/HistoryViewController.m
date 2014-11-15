@@ -15,10 +15,6 @@
 
 @implementation HistoryViewController
 
-@synthesize historyTableView = _historyTableView;
-@synthesize sendingWheel = _sendingWheel;
-@synthesize sendingLabel = _sendingLabel;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,12 +31,6 @@
     
     [self showSendingWheel:NO];
     [self showSendingLabel:NO];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UITableViewDataSource methods and related helpers
@@ -77,13 +67,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-#pragma mark - Swapping views
--(IBAction)pushInboxViewController
-{
-    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate showInboxNavigationController];
 }
 
 #pragma mark - Updating view for sending status

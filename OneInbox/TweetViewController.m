@@ -21,10 +21,6 @@
 
 @implementation TweetViewController
 
-@synthesize tweetView = _tweetView;
-@synthesize characterLabel = _characterLabel;
-@synthesize loadingWheel = _loadingWheel;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -65,12 +61,6 @@
     [self updateCharacterLabel];
     
     [_tweetView.messageView becomeFirstResponder];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Character label

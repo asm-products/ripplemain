@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="R30-qX-dhm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="R30-qX-dhm">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -139,7 +139,7 @@
         <!--Messages-->
         <scene sceneID="uRh-sW-khK">
             <objects>
-                <viewController id="ee0-E2-5d5" customClass="InboxViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InboxViewController" id="ee0-E2-5d5" customClass="InboxViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vfC-Cq-fni"/>
                         <viewControllerLayoutGuide type="bottom" id="EI4-Ua-1oS"/>
@@ -522,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peL-zw-nKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-350" y="-683"/>
+            <point key="canvasLocation" x="-332" y="-683"/>
         </scene>
         <!--Add Contacts-->
         <scene sceneID="Jcx-8g-n2y">
@@ -587,7 +587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWT-ci-tvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869" y="-683"/>
+            <point key="canvasLocation" x="896" y="-745"/>
         </scene>
         <!--Phone Book Contacts View Controller-->
         <scene sceneID="Zcz-QX-Hwa">
@@ -770,10 +770,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Nid-ep-Snr"/>
         <segue reference="5Ax-76-XyU"/>
         <segue reference="AgY-RQ-7wz"/>
-        <segue reference="IVZ-uy-cpz"/>
+        <segue reference="y6h-tH-hRZ"/>
         <segue reference="QjS-dG-25q"/>
+        <segue reference="IVZ-uy-cpz"/>
     </inferredMetricsTieBreakers>
 </document>

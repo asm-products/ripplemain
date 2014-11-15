@@ -406,12 +406,6 @@
         NSDate* latestCloudMessageGMTDate = [MFRDateTime convertStringToNSDate:[latestCloudMessage objectForKey:@"Date"]];
         NSDate* latestLocalMessageGMTDate = [MFRDateTime convertStringToNSDate:[latestLocalMessage objectForKey:@"Date"]];
         
-//        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-//        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-//        
-//        NSDate* latestCloudMessageDate = [formatter dateFromString:[latestCloudMessage objectForKey:@"Date"]];
-//        NSDate* latestLocalMessageDate = [formatter dateFromString:[latestLocalMessage objectForKey:@"Date"]];
-        
         if ([latestCloudMessageGMTDate isEqualToDate:latestLocalMessageGMTDate]) {
             return YES;
         }

@@ -16,7 +16,6 @@
     
     PFUser* _user;
     PFObject* _userLinks;
-    BOOL _shouldRefreshInbox;
     BOOL _shouldReloadInboxTable;
     NSMutableArray* _contacts;
     BOOL _usingFriendRelations;
@@ -26,17 +25,7 @@
     BOOL _shouldFetchContacts;
     BOOL _shouldReloadContacts;
     BOOL _shouldReloadFriendRequestsVC;
-//    BOOL _newUser;
 }
-
-@synthesize linkImages = _linkImages;
-@synthesize largeLinkImages = _largeLinkImages;
-@synthesize parentViewController = _parentViewController;
-@synthesize usernameFullNames = _usernameFullNames;
-@synthesize friendRequests = _friendRequests;
-@synthesize currentUserDefaults = _currentUserDefaults;
-@synthesize localMessageThreads = _localMessageThreads;
-@synthesize friendInvitePromptTally = _friendInvitePromptTally;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -63,37 +52,16 @@
 //    _newUser = NO;
     
     // Register for push notifications
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-     UIRemoteNotificationTypeBadge |
-     UIRemoteNotificationTypeAlert |
-     UIRemoteNotificationTypeSound];
-    
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
-                                                             bundle: nil];
-    
-//    _parentViewController = (ParentViewController*)[mainStoryboard
-//                                                    instantiateViewControllerWithIdentifier: @"parentViewController"];
-    
-    
-    
-    // HACK
-    // Make a call to the parentViewController so that its subviews are retained when the app enters the background
-//    [_parentViewController view];
-    
-    /*
-    // Set up views
-    self.composeNavigationController = (NonRotatingNavigationController*)[mainStoryboard
-                                                                   instantiateViewControllerWithIdentifier: @"composeNavigationController"];
-    
-    self.contactsNavigationController = (NonRotatingNavigationController*)[mainStoryboard
-                                                                  instantiateViewControllerWithIdentifier: @"contactsNavigationController"];
-    
-    NSArray *viewControllers = self.composeNavigationController.viewControllers;
-    ((ComposeViewController*)[viewControllers objectAtIndex:0])->_originalLink = YES;
-    
-    NSArray *contactsViewControllers = self.contactsNavigationController.viewControllers;
-    ((ContactsViewController*)[contactsViewControllers objectAtIndex:0])->_sendingLink = NO;
-    */
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    {
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else
+    {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+    }
     
     // Create the log in view controller
     self.loginViewController = [[MFRLoginViewController alloc] init];
@@ -106,13 +74,6 @@
     [self.signUpViewController setFields:PFSignUpFieldsDefault | PFSignUpFieldsAdditional];
     [self.loginViewController setSignUpController:self.signUpViewController];
 
-    //---------------------------------------
-    // Uncomment to logout on loading the app
-    //---------------------------------------
-//    if ([PFUser currentUser]){
-//        [PFUser logOut];
-//    }
-    
     [[self window] makeKeyAndVisible];
     
     self.parentViewController = (ParentViewController*)self.window.rootViewController;
@@ -127,7 +88,7 @@
         [self getCurrentUserDefaultsFromNSUserDefaults];
     }
     
-    _shouldRefreshInbox = NO;
+    self.inboxShouldRefresh = NO;
     _shouldReloadInboxTable = NO;
     
     //--------------------------------------
@@ -170,18 +131,6 @@
     return YES;
 }
 							
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Refresh inbox
@@ -190,7 +139,7 @@
         [((InboxViewController*)[viewControllers objectAtIndex:0]) refreshInbox:self];
     }
     else {
-        _shouldRefreshInbox = YES;
+        self.inboxShouldRefresh = YES;
     }
     
     // Refresh contacts
@@ -206,16 +155,6 @@
 //    if (_shouldFetchFriendRequests) {
 //        [self fetchFriendRequests];
 //    }
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 #pragma mark - Switching views
@@ -627,7 +566,7 @@
 //    if ((InboxViewController*)[self.parentViewController.inboxNavigationController.viewControllers objectAtIndex:0]) {
 //        [(InboxViewController*)[self.parentViewController.inboxNavigationController.viewControllers objectAtIndex:0] getMessageThreadsForUser:self];
     } else {
-        _shouldRefreshInbox = YES;
+        self.inboxShouldRefresh = YES;
     }
 }
 
@@ -727,14 +666,6 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
 
 -(void)markContactsVCAsCreated {
     _contactsVCHasBeenCreated = YES;
-}
-
--(BOOL)inboxShouldRefresh {
-    return _shouldRefreshInbox;
-}
-
--(void)setShouldInboxRefresh:(BOOL)b {
-    _shouldRefreshInbox = b;
 }
 
 -(BOOL)inboxTableShouldReload {

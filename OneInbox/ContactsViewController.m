@@ -34,15 +34,6 @@
 
 @implementation ContactsViewController
 
-@synthesize linkObject = _linkObject;
-@synthesize contactsTableView = _contactsTableView;
-@synthesize sendButton = _sendButton;
-@synthesize composeButton = _composeButton;
-@synthesize addContactsButton = _addContactsButton;
-@synthesize messageBody = _messageBody;
-@synthesize contactsTableSections = _contactsTableSections;
-@synthesize messageThread = _messageThread;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -101,15 +92,11 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     // If view loaded from web view and link has been passed on or deleted, dismiss web view
     if (pushedFromWebView){
         [webViewDelegate dismissWebView];
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - View setup

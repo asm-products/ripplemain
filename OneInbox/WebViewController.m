@@ -13,7 +13,7 @@
 #import "TweetViewController.h"
 #import "TwitterViewController.h"
 
-@interface WebViewController () {
+@interface WebViewController ()<WebViewDelegate> {
     int _pageIndex;
     int _maxReachedPageIndex;
 }
@@ -21,14 +21,6 @@
 @end
 
 @implementation WebViewController
-
-@synthesize linkWebView = _linkWebView;
-@synthesize linkObject = _linkObject;
-@synthesize toolbar = _toolbar;
-@synthesize webBackButton = _webBackButton;
-@synthesize webForwardButton = _webForwardButton;
-@synthesize shareButton = _shareButton;
-@synthesize loadingWheel = _loadingWheel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -119,12 +111,6 @@
     } else {
         [_loadingWheel stopAnimating];
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Displaying site
@@ -300,8 +286,8 @@
     }
 }
 
--(void)setViewTitle:(NSString*)title {
-    self.navigationController.navigationBar.topItem.title = title;
+-(void)setViewTitle:(NSString*)newTitle {
+    self.navigationController.navigationBar.topItem.title = newTitle;
 }
 
 #pragma mark - Action sheet delegate

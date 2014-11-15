@@ -17,12 +17,6 @@
 
 @implementation TwitterViewController
 
-@synthesize notConnectedLabel = _notConnectedLabel;
-@synthesize linkButton = _linkButton;
-@synthesize unlinkButton = _unlinkButton;
-@synthesize usernameLabel = _usernameLabel;
-@synthesize loadingWheel = _loadingWheel;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -49,12 +43,6 @@
     [self.notConnectedLabel setTextColor:[UIColor lightGrayColor]];
     
     [self displayCorrectUIElements];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Displaying according to Twitter user status
