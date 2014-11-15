@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "RIPPLE",
+  "description": "A better way to send links to your friends.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "assets/img/icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
