@@ -1,6 +1,6 @@
 body {
-  min-width: 500px;
-  max-width: 500px;
+  min-width: 300px;
+  max-width: 300px;
   overflow-x: hidden;
 }
 
@@ -8,8 +8,8 @@ img {
   margin: 5px;
   border: 2px solid black;
   vertical-align: middle;
-  width: 75px;
-  height: 75px;
+  width: 50px;
+  height: 50px;
 }
 
 .container {
@@ -22,9 +22,10 @@ img {
 
 .brand-bar .brand {
   color: #fff;
-  padding: 15px 0;
+  padding: 10px 0;
   margin: 0;
   text-align: center;
+  font-size: 26px;
 }
 
 .url-card {
@@ -35,13 +36,17 @@ img {
 
 .title {
   vertical-align: middle;
-  padding: 18px 0;
+  padding: 10px 0;
   margin: 0;
+}
+
+.title .page-title {
+  font-size: 20px;
 }
 
 .title .page-title, .title .url {
   display: block;
-  width: 370px;
+  width: 200px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -50,40 +55,43 @@ img {
 .url {
   display: block;
   margin: 0;
-  line-height: 16px;
-  font-size: 14px;
+  line-height: 14px;
+  font-size: 12px;
   font-weight: 200;
   color: #CDCDCD;
 }
 
-input, textarea {
+input, textarea, select {
   -webkit-border-radius: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
 }
 
-.tt-dropdown-menu {
-  width: 181px;
-  margin-top: 10px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-/*  -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-          border-radius: 8px;*/
-  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+/**
+ * Override select2 css
+ */
+
+.select2-container.form-control,
+.select2-drop {
+  -webkit-border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
-.tt-suggestion {
-  padding: 8px 20px;
-  font-size: 14px;
-  line-height: 18px;
+.select2-container-multi .select2-choices {
+  background-image: none;
 }
 
-.tt-suggestion.tt-cursor {
+.select2-results {
+  padding: 0;
+  margin: 0;
+}
+
+.select2-results .select2-highlighted {
+  background: #2c3e50;
+}
+
+/*.select2-container-multi .select2-choices .select2-search-choice {
   background: #2c3e50;
   color: #fff;
-}
+}*/

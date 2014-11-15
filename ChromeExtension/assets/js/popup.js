@@ -3,7 +3,10 @@ var internals = {};
 
 
 var friends = [
-  "David Brooks", "Laura Daniels", "Seb Merrick", "Fiona Ward"
+  {id: 1, text: "David Brooks"},
+  {id: 2, text: "Laura Daniels"},
+  {id: 3, text: "Seb Merrick"},
+  {id: 4, text: "Fiona Ward"}
 ];
 
 /**
@@ -25,33 +28,6 @@ internals.getActiveTabUrl = function(next) {
   });
 };
 
-/**
- * Get the friends matching the query
- * provided by the typeahead plugin.
- *
- * SHOULD BE SWAPPED OUT FOR AN API CALL
- * TO THE RIPPLE SERVICE TO USER'S GET FRIENDS
- *
- * @param  {String}   query
- * @param  {Function} next
- * @return {Array}
- */
-internals.getFriends = function (query, next) {
-  var matches = [];
-  var substrRegex = new RegExp(query, 'i');
-
-  $.each(friends, function(i, str) {
-    if (substrRegex.test(str)) {
-      // the typeahead jQuery plugin expects suggestions
-      // to be an object
-      matches.push({ value: str });
-    }
-  });
-
-  return next(matches);
-};
-
-
 document.addEventListener('DOMContentLoaded', function () {
   if (chrome) {
     internals.getActiveTabUrl(function(tab) {
@@ -69,13 +45,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  $('.js-friends').typeahead({
-    hint: true,
-    highlight: true,
-    minLength: 1,
-  }, {
-    name: 'friends',
-    source: internals.getFriends
+  $('.js-friends').select2({
+    multiple: true,
+    data: friends,
+    createSearchChoice: function (name) {
+      return { id: name, text: name };
+    },
+    ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
+        url: "/assets/friends.json",
+        dataType: 'json',
+        quietMillis: 250,
+        // data: function (term, page) {
+        //   return {
+        //     q: term, // search term
+        //   };
+        // },
+        results: function (data, page) { // parse the results into the format expected by Select2.
+            // since we are using custom formatting functions we do not need to alter the remote JSON data
+            return { results: data.items };
+        },
+        cache: true
+    },
   });
 });
 
