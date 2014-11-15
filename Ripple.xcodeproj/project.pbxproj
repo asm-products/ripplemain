@@ -1265,7 +1265,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "6D4B9553-092D-410E-99ED-CEC3EC68AC77";
+				PROVISIONING_PROFILE = "38359564-2b7a-4b2e-a241-2b61f3fb0278";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1299,7 +1299,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "DBC5475F-A2AD-46D7-9269-11D0A227656D";
+				PROVISIONING_PROFILE = "38359564-2b7a-4b2e-a241-2b61f3fb0278";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1311,13 +1311,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ed Rex (KP9ATVVNNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ed Rex (KP9ATVVNNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OneInbox/Ripple-Prefix.pch";
 				INFOPLIST_FILE = "OneInbox/Ripple-Info.plist";
 				PRODUCT_NAME = Ripple;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "38359564-2b7a-4b2e-a241-2b61f3fb0278";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1329,12 +1329,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Missing Fundamental Limited (L6M86D2UJB)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Missing Fundamental Limited (L6M86D2UJB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OneInbox/Ripple-Prefix.pch";
 				INFOPLIST_FILE = "OneInbox/Ripple-Info.plist";
 				PRODUCT_NAME = Ripple;
-				PROVISIONING_PROFILE = "DBC5475F-A2AD-46D7-9269-11D0A227656D";
+				PROVISIONING_PROFILE = "38359564-2b7a-4b2e-a241-2b61f3fb0278";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
