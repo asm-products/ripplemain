@@ -77,7 +77,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "224"
             endingLineNumber = "224"
-            landmarkName = "-clearLinkData"
+            landmarkName = "-fetchImageForLink"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -276,22 +276,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OneInbox/WebEnabledViewController.m"
-            timestampString = "416229296.599434"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
-            landmarkName = "-getOGImageFromHTML:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -347,7 +331,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "302"
             endingLineNumber = "302"
-            landmarkName = "-getUserInfo"
+            landmarkName = "-signUpViewControllerDidCancelSignUp:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1366,22 +1350,6 @@
             startingLineNumber = "615"
             endingLineNumber = "615"
             landmarkName = "-application:didReceiveRemoteNotification:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OneInbox/AppDelegate.m"
-            timestampString = "425044605.277381"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "788"
-            endingLineNumber = "788"
-            landmarkName = "-notifyViewControllersOfReplySuccess:forMessageThreadID:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
