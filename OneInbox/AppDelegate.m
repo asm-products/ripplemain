@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Ed Rex. All rights reserved.
 //
 
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 #import "AppDelegate.h"
 #import "ComposeViewController.h"
 #import "InboxViewController.h"
@@ -29,6 +32,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Fabric with:@[CrashlyticsKit]];
+
     [Parse setApplicationId:@"XuohdddavQAhrcL2JTBy7ulGcx9ypwRHI3ym74BA"
                   clientKey:@"UQaPfzhh1YnBEGw9c3ClnBwwNlusYczcIoQSSw4N"];
     
