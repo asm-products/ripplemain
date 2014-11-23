@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A2E846E1A076BC700A2D6E0 /* RippleTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E846D1A076BC700A2D6E0 /* RippleTests-Info.plist */; };
+		4A6FBEAD1A1791FD00BA0D49 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FBEAB1A1791FD00BA0D49 /* Crashlytics.framework */; };
+		4A6FBEAE1A1791FD00BA0D49 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FBEAC1A1791FD00BA0D49 /* Fabric.framework */; };
 		53030D6118CA0AC90014AC7D /* ContactsNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 53030D5F18CA0AC90014AC7D /* ContactsNew.png */; };
 		53030D6218CA0AC90014AC7D /* ContactsNew@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53030D6018CA0AC90014AC7D /* ContactsNew@2x.png */; };
 		5306D98C18C3773200CF2789 /* RemoveImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 5306D98618C3773200CF2789 /* RemoveImage.png */; };
@@ -174,6 +176,8 @@
 
 /* Begin PBXFileReference section */
 		4A2E846D1A076BC700A2D6E0 /* RippleTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RippleTests-Info.plist"; sourceTree = "<group>"; };
+		4A6FBEAB1A1791FD00BA0D49 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		4A6FBEAC1A1791FD00BA0D49 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		53030D5F18CA0AC90014AC7D /* ContactsNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ContactsNew.png; sourceTree = "<group>"; };
 		53030D6018CA0AC90014AC7D /* ContactsNew@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ContactsNew@2x.png"; sourceTree = "<group>"; };
 		5306D98618C3773200CF2789 /* RemoveImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RemoveImage.png; sourceTree = "<group>"; };
@@ -386,10 +390,12 @@
 				538270F218A0DBF80045F292 /* QuartzCore.framework in Frameworks */,
 				538270F018A0DBF30045F292 /* MobileCoreServices.framework in Frameworks */,
 				538270EE18A0DBED0045F292 /* libz.dylib in Frameworks */,
+				4A6FBEAD1A1791FD00BA0D49 /* Crashlytics.framework in Frameworks */,
 				538270EC18A0DBE70045F292 /* CoreLocation.framework in Frameworks */,
 				537B6A5A189EA40C006B3542 /* CoreGraphics.framework in Frameworks */,
 				538270EA18A0DBDB0045F292 /* CFNetwork.framework in Frameworks */,
 				538270E818A0DBD60045F292 /* AudioToolbox.framework in Frameworks */,
+				4A6FBEAE1A1791FD00BA0D49 /* Fabric.framework in Frameworks */,
 				537B6A5C189EA40C006B3542 /* UIKit.framework in Frameworks */,
 				537B6A58189EA40C006B3542 /* Foundation.framework in Frameworks */,
 				957FF0535B3599A991B1B4FA /* libPods.a in Frameworks */,
@@ -637,6 +643,8 @@
 		537B6A56189EA40C006B3542 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A6FBEAB1A1791FD00BA0D49 /* Crashlytics.framework */,
+				4A6FBEAC1A1791FD00BA0D49 /* Fabric.framework */,
 				538270F718A0DC090045F292 /* SystemConfiguration.framework */,
 				538270F518A0DC030045F292 /* StoreKit.framework */,
 				538270F318A0DBFE0045F292 /* Security.framework */,
@@ -925,6 +933,7 @@
 				537B6A51189EA40C006B3542 /* Frameworks */,
 				537B6A52189EA40C006B3542 /* Resources */,
 				7B25A8C49A82740B03E9417C /* Copy Pods Resources */,
+				4A6FBEAA1A1791D100BA0D49 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -1099,6 +1108,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4A6FBEAA1A1791D100BA0D49 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# ./Fabric.framework/run f26c389b77793424ba4f885d44a259d8c8e002aa";
+		};
 		7B25A8C49A82740B03E9417C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1313,6 +1336,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OneInbox/Ripple-Prefix.pch";
 				INFOPLIST_FILE = "OneInbox/Ripple-Info.plist";
@@ -1330,6 +1357,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Missing Fundamental Limited (L6M86D2UJB)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OneInbox/Ripple-Prefix.pch";
 				INFOPLIST_FILE = "OneInbox/Ripple-Info.plist";
